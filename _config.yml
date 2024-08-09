@@ -26,7 +26,6 @@ create_goals:
   layout: goal-by-target
   previous_next_links: false
 
-
 create_pages: true
 
 frontpage_goals_grid:
