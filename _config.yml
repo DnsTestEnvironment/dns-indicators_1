@@ -28,6 +28,7 @@ create_goals:
 
 create_pages: true
 
+
 frontpage_goals_grid:
     title: frontpage.heading
     description: frontpage.instructions
