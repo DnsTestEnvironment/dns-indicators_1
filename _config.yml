@@ -11,11 +11,11 @@ description: Data Platform Prototype
 url: ""
 data_dir: data
 environment: staging
-remote_data_prefix: "https://DnsTestEnvironment.github.io/dns-data"
+remote_data_prefix: "https://DnsTestEnvironment.github.io/dns-data_1"
 # URL for the "Edit Data" button on indicators.
-data_edit_url: http://prose.io/#DnsTestEnvironment/dns-data/edit/develop/data/indicator_[id].csv
+data_edit_url: http://prose.io/#DnsTestEnvironment/dns-data_1/edit/develop/data/indicator_[id].csv
 # URL for the "Edit Metadata" button on indicators.
-metadata_edit_url: http://prose.io/#DnsTestEnvironment/dns-data/edit/develop/meta/[id].md
+metadata_edit_url: http://prose.io/#DnsTestEnvironment/dns-data_1/edit/develop/meta/[id].md
 # permalink: /news/:year/:month/:day/:title.html
 
 # Automatically create indicator pages, goal pages,
