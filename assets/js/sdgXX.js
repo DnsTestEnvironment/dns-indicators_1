@@ -6303,3 +6303,49 @@ $(function() {
 $(document).ready(function() {
     $('a[href="#top"]').prepend('<svg class="app-c-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17" aria-hidden="true" focusable="false"><path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path></svg>');
 });
+function confirm_alert(source, lang) {
+  if (source && source != '') {
+    if (lang == 'De'){
+      var text = 'Sie verlassen unsere Webseite!\nDer Link führt Sie zur Webseite '
+    } else{
+      var text = 'You are leaving our website!\nThe link leads to the website of '
+    }
+    return confirm(text + source + '.');
+  } else {
+    if (lang == 'De'){
+      var text = 'Sie verlassen unsere Webseite!\nDer Link führt Sie zu einer externen Webseite.'
+    }else{
+      var text = 'You are leaving our website!\nThe link leads to an external website.'
+    }
+    return confirm(text)
+  }
+}
+function deleteStuffFromIndicatorPagesForIframe(indicator) {
+    var iframeId = 'myIframe_' + indicator;
+    var goal = indicator.substring(0, indicator.search('-'));
+    var iframe = document.getElementById(iframeId);
+    var iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+    // Header ausblenden
+    var header = iframeDocument.querySelector("header[role='banner']");
+    if (header) {
+        header.style.display = "none";
+    }
+    // Element mit Klasse "heading goal-banner indicator goal-2" ausblenden
+    var element = iframeDocument.querySelector(".heading.goal-banner.indicator.goal-" + goal);
+    if (element) {
+        element.style.display = "none";
+    }
+    // Disclaimer ausblenden
+    var disclaimer = iframeDocument.getElementById("disclaimer");
+    if (disclaimer) {
+        disclaimer.style.display = "none";
+    }
+    // Breadcrumbs ausblenden
+    iframeDocument.querySelectorAll(".breadcrumb").forEach(a=>a.style.display = "none");
+    // Buttons ausblenden
+    iframeDocument.getElementById("navigationbuttons").style.display = 'none';
+    // Buttons ausblenden
+    iframeDocument.querySelectorAll(".app-c-back-to-top__icon").forEach(a=>a.style.display = "none");
+    // Footer ausblenden
+    iframeDocument.querySelectorAll('[role="contentinfo"]').forEach(a=>a.style.display = "none");
+  }
