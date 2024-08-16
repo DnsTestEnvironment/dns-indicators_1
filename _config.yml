@@ -33,6 +33,11 @@ frontpage_goals_grid:
     title: frontpage.heading
     description: frontpage.instructions
 
+time_series_attributes:
+  - field: COMMENT_TS
+    label: indicator.footnote
+  - field: DATA_LAST_UPDATE
+    label: metadata_fields.national_data_update_url
 
 analytics:
   ga_prod: ''
@@ -132,16 +137,16 @@ menu:
     - path: /help/faq/
       translation_key: menu.1_help_2_faq
 
-frontpage_cards:
-    - rule_color: grey
-      title: ''
-      include: components/download-all-data.html
-    - rule_color: grey
-      title: ''
-      include: components/joint_action_column.html
-    - rule_color: grey
-      title: ''
-      include: components/strategy_column.html
+# frontpage_cards:
+#     - rule_color: grey
+#       title: ''
+#       include: components/download-all-data.html
+#     - rule_color: grey
+#       title: ''
+#       include: components/joint_action_column.html
+#     - rule_color: grey
+#       title: ''
+#       include: components/strategy_column.html
 
 header_language_toggle: links
 contrast_type: single
