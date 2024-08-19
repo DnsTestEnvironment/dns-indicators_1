@@ -145,7 +145,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/dns-indicators_1/assets/css/style.css?v=20240816142618">
+        <link rel="stylesheet" href="/dns-indicators_1/assets/css/style.css?v=20240819055830">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -178,7 +178,7 @@ layout-goal
     <h2 class="internet-explorer-message-title"></h2>
     <p class="internet-explorer-message-body"></p>
 </div>
-<div id="disclaimer">
+<!-- <div id="disclaimer">
     
 <div class="container">
   <div class="disclaimer-alert">
@@ -189,7 +189,7 @@ layout-goal
   </div>
 </div>
 
-</div>
+</div> -->
 
 <header role="banner" class="">
     <div class="container">
@@ -204,42 +204,54 @@ layout-goal
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav" id="menu"><li class="nav-item ">
     <a class="nav-link" href="/dns-indicators_1/en/">Start</a>
-</li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-status" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+</li>
+<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-status" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Status overview
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdown-menu-1-status"><li class=" ">
     <a class="dropdown-item" href="/dns-indicators_1/en/status/">Methodology</a>
-</li><li class=" ">
+</li>
+<li class=" ">
     <a class="dropdown-item" href="/dns-indicators_1/en/status_summary/">Overview</a>
-</li></ul>
-            </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-strategy" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+</li>
+</ul>
+          </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-strategy" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Strategy
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdown-menu-1-strategy"><li class=" ">
     <a class="dropdown-item" href="/dns-indicators_1/en/strategy/dns/">German Sustainable Development Strategy</a>
-</li><li class=" ">
+</li>
+<li class=" ">
     <a class="dropdown-item" href="/dns-indicators_1/en/strategy/monitoring/">Monitoring</a>
-</li><li class=" ">
+</li>
+<li class=" ">
     <a class="dropdown-item" href="/dns-indicators_1/en/strategy/publications/">Publications</a>
-</li><li class=" ">
+</li>
+<li class=" ">
     <a class="dropdown-item" href="/dns-indicators_1/en/strategy/links/">Links</a>
-</li></ul>
-            </li><li class="nav-item ">
+</li>
+</ul>
+          </li><li class="nav-item ">
     <a class="nav-link" href="/dns-indicators_1/en/laender/">Länder</a>
-</li><li class="nav-item ">
-    <a class="nav-link" href="/dns-indicators_1/en/menu.1_global_indicators_path">Global indicators <img class="link_btn" src="https://sdg-indikatoren.de/public/SDG Wheel_Transparent.png" title="Klicken Sie hier um zur Seite der SDG Indikatoren zu gelangen" alt="Link SDG" style="width:24px;height:24px;"/></a>
-</li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-help" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+</li>
+<li class="nav-item ">
+    <a class="nav-link" href="https://sdg-indicators.de">Global indicators <img class="link_btn" src="https://sdg-indikatoren.de/public/SDG Wheel_Transparent.png" title="Klicken Sie hier um zur Seite der SDG Indikatoren zu gelangen" alt="Link SDG" style="width:24px;height:24px;"/></a>
+</li>
+<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-help" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Help
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdown-menu-1-help"><li class=" ">
     <a class="dropdown-item" href="/dns-indicators_1/en/help/navigation/">Structure of the online platform</a>
-</li><li class=" ">
+</li>
+<li class=" ">
     <a class="dropdown-item" href="/dns-indicators_1/en/help/guidance/">Technical guidance</a>
-</li><li class=" ">
+</li>
+<li class=" ">
     <a class="dropdown-item" href="/dns-indicators_1/en/help/faq/">FAQ</a>
-</li></ul>
-            </li></ul>
-    
+</li>
+</ul>
+          </li></ul>
+
                 </div>
                 <div class="header-search-bar">
                     <form class="align-self-lg-end" id="search" action="/dns-indicators_1/en/search/">
@@ -262,34 +274,66 @@ layout-goal
 
 
   <div class="language-toggle-container d-flex">
-    <i class="fa fa-globe language-toggle-globe-links"></i>
     <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-de list-inline-item">
             <a class="language-toggle-link" href="/dns-indicators_1/5/">
                 Deutsch
             </a>
+        </li><li class="language-option-en list-inline-item" style="opacity:0.3">
+            <span>
+                English
+            </span>
         </li></ul>
 </div>
 
 
+
                     <span class="no-js-language-toggle"><div class="language-toggle-container d-flex">
-    <i class="fa fa-globe language-toggle-globe-links"></i>
     <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-de list-inline-item">
             <a class="language-toggle-link" href="/dns-indicators_1/5/">
                 Deutsch
             </a>
+        </li><li class="language-option-en list-inline-item" style="opacity:0.3">
+            <span>
+                English
+            </span>
         </li></ul>
-</div></span><a title="" aria-label=""
+</div>
+</span><a title="" aria-label=""
     data-contrast-switch-to="" href="javascript:void(0)" data-on="click"
 data-event-category="Accessibility"
 data-event-action="Change contrast setting"
 data-event-label="high"
 >A</a>
+
                 </div>
             </div>
         </nav>
     </div>
 </header>
 <div id="top" tabindex=-1></div>
+
+
+
+<div class="heading goal-banner goal-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-4 col-md-3 col-lg-2 goal-icon goal-tiles">
+        <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/dns/en/5.png" alt="Gender equality - Goal 5" id="goal-5" class="goal-icon-image goal-icon-image-" />
+      </div>
+      <div class="col-8 col-md-9 col-lg-10 goal-details">
+        <h1 class="titles goal-5">
+          
+              Achieve gender equality and empower all women and girls
+          
+        </h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
 
 
 
@@ -307,222 +351,155 @@ data-event-label="high"
   
 </div>
 
-<div class="heading goal-banner goal-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-4 col-md-3 col-lg-2 goal-icon goal-tiles">
-                <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/dns/en/5.png" alt="Gender equality - Goal 5" id="goal-5" class="goal-icon-image goal-icon-image-" />
-            </div>
-            <div class="col-8 col-md-9 col-lg-10 goal-details">
-                <h1>
-                    
-                        Achieve gender equality and empower all women and girls
-                    
-                </h1>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-
-
-<div id="main-content" class="container" role="main">
+<div id="main-content" class="container goal-indicators goal-5 goal-by-target" role="main">
 
   
 
 
 
-  <div class="container g-0 ">
-    <div class="row align-items-end">
-      <div class="col">
-        <h2 class="goal-page-heading"></h2>
+  
+
+  <div class="container">
+    <!--<div class="row justify-content-md-center">-->
+    <div class="row justify-content-around">
+      <div class="col-sm-4 d-grid gap-2">
+        <a href="https://dnstestenvironment.github.io/dns-indicators/en/4" class="btn btn-primary btn-block goal-5 navigation-btn text-nowrap" role="button">
+          <b class="d-sm-none d-lg-block"><i class="fa fa-chevron-left" aria-hidden="true"></i> Previous goal</b><b class="d-none d-sm-block d-lg-none"><i class="fa fa-chevron-left" aria-hidden="true"></i></b>
+        </a>
       </div>
+
+      <div class="col-sm-4 d-grid gap-2">
+        <a href="https://sustainabledevelopment-germany.github.io/en//5" class="btn btn-primary btn-block goal-5 navigation-btn" title="" role="button">
+          <b class="btn-label d-sm-none d-lg-block">Corresponding SDG Goal 5 </b><b class="btn-label d-none d-sm-block d-lg-none">Goal 5 - Global</b>
+        </a>
+      </div>
+
+      <div class="col-sm-4 d-grid gap-2">
+        <a href="https://dnstestenvironment.github.io/dns-indicators/en/6" class="btn btn-primary btn-block goal-5 navigation-btn text-nowrap" role="button">
+          <b class="btn-label d-sm-none d-lg-block">Next goal <i class="fa fa-chevron-right" aria-hidden="true"></i></b><b class="d-none d-sm-block d-lg-none"><i class="fa fa-chevron-right" aria-hidden="true"></i></b>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col heading-goal-page">
+        <h2>Range of indicators and postulates</h2>
+      </div>
+      <div class="col heading-goal-page" >
+        <h2>Indicators</h2>
+      </div>
+    </div>
+
+    
+    
+      <div class="row">
+        <div class="col indicator-cards target goal-target no-gutters">
+          <div class="row range-and-postulate">
+            <span class="indicator-card-number">
+              Equality
+            </span>
+            <p class="postulate">
+              Promoting equal opportunities in society
+            </p>
+          </div>
+        </div>
+
+        <div class="col indicator-cards no-gutters">
+
+          
+
+            
+            
+            
+            
+
+            <div class="row" style="margin-bottom: 25px;">
+              
+              <span class="indicator-card-number" >
+                5.1.a
+              </span>
+              <a class="indicator-link-goal-page" href="/dns-indicators_1/en/5-1-a/" >
+                Gender pay gap
+              </a>
+              
+            </div>
+          
+
+            
+            
+            
+            
+
+            <div class="row" style="margin-bottom: 25px;">
+              
+              <span class="indicator-card-number" >
+                5.1.b, c
+              </span>
+              <a class="indicator-link-goal-page" href="/dns-indicators_1/en/5-1-bc/" >
+                Women in management positions in business and in the federal civil service
+              </a>
+              
+            </div>
+          
+
+            
+            
+            
+            
+
+            <div class="row" style="margin-bottom: 25px;">
+              
+              <span class="indicator-card-number" >
+                5.1.d
+              </span>
+              <a class="indicator-link-goal-page" href="/dns-indicators_1/en/5-1-d/" >
+                Proportion of fathers receiving parental allowance
+              </a>
+              
+            </div>
+          
+          </div>
+        </div>
+      
+      <div class="row">
+        <div class="col indicator-cards target goal-target no-gutters">
+          <div class="row range-and-postulate">
+            <span class="indicator-card-number">
+              Equality
+            </span>
+            <p class="postulate">
+              Strengthening the economic participation of women globally
+            </p>
+          </div>
+        </div>
+
+        <div class="col indicator-cards no-gutters">
+
+          
+
+            
+            
+            
+            
+
+            <div class="row" style="margin-bottom: 25px;">
+              
+              <span class="indicator-card-number" >
+                5.1.e
+              </span>
+              <a class="indicator-link-goal-page" href="/dns-indicators_1/en/5-1-e/" >
+                Vocational qualification of women and girls through German development assistance
+              </a>
+              
+            </div>
+          
+          </div>
+        </div>
       
     </div>
-    <hr class="goal-page-column-header-rule">
-    
-      
-      <div class="row align-items-start goal-target">
-          <div class="col-auto goal-page-target-number">
-            <h3 class="goal-target">
-              <span class="target-number"><span class="visually-hidden">Target</span> 5.1</span>
-            </h3>
-          </div>
-          <div class="col goal-page-target-name">
-            <span class="target-name">global_targets.5-1-title</span>
-          </div>
-          
-      </div>
-        
-
-          
-          
-          
-          
-
-          <div class="row align-items-start goal-indicator">
-          
-            <div class="col-auto goal-page-indicator-number">
-              <h4>
-                <span class="indicator-number"><span class="visually-hidden">Indicator</span> 5.1.a</span>
-              </h4>
-            </div>
-            <div class="col goal-page-indicator-name">
-              
-              <span class="indicator-name"><a href="/dns-indicators_1/en/5-1-a/">Gender pay gap</a></span>
-              
-
-
-
-
-    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
-        <span class="visually-hidden"></span>
-        
-
-
-
-<span class="status complete">
-    <span class="status-inner">complete</span>
-</span>
-
-
-        </li></ul>
-
-
-            </div>
-            
-            
-          </div>
-        
-
-          
-          
-          
-          
-
-          <div class="row align-items-start goal-indicator">
-          
-            <div class="col-auto goal-page-indicator-number">
-              <h4>
-                <span class="indicator-number"><span class="visually-hidden">Indicator</span> 5.1.bc</span>
-              </h4>
-            </div>
-            <div class="col goal-page-indicator-name">
-              
-              <span class="indicator-name"><a href="/dns-indicators_1/en/5-1-bc/">Women in management positions in business and in the federal civil service</a></span>
-              
-
-
-
-
-    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
-        <span class="visually-hidden"></span>
-        
-
-
-
-<span class="status complete">
-    <span class="status-inner">complete</span>
-</span>
-
-
-        </li></ul>
-
-
-            </div>
-            
-            
-          </div>
-        
-
-          
-          
-          
-          
-
-          <div class="row align-items-start goal-indicator">
-          
-            <div class="col-auto goal-page-indicator-number">
-              <h4>
-                <span class="indicator-number"><span class="visually-hidden">Indicator</span> 5.1.d</span>
-              </h4>
-            </div>
-            <div class="col goal-page-indicator-name">
-              
-              <span class="indicator-name"><a href="/dns-indicators_1/en/5-1-d/">Proportion of fathers receiving parental allowance</a></span>
-              
-
-
-
-
-    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
-        <span class="visually-hidden"></span>
-        
-
-
-
-<span class="status complete">
-    <span class="status-inner">complete</span>
-</span>
-
-
-        </li></ul>
-
-
-            </div>
-            
-            
-          </div>
-        
-
-          
-          
-          
-          
-
-          <div class="row align-items-start goal-indicator">
-          
-            <div class="col-auto goal-page-indicator-number">
-              <h4>
-                <span class="indicator-number"><span class="visually-hidden">Indicator</span> 5.1.e</span>
-              </h4>
-            </div>
-            <div class="col goal-page-indicator-name">
-              
-              <span class="indicator-name"><a href="/dns-indicators_1/en/5-1-e/">Vocational qualification of women and girls through German development assistance</a></span>
-              
-
-
-
-
-    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
-        <span class="visually-hidden"></span>
-        
-
-
-
-<span class="status complete">
-    <span class="status-inner">complete</span>
-</span>
-
-
-        </li></ul>
-
-
-            </div>
-            
-            
-          </div>
-        
-        <hr class="goal-page-target-rule" />
-    
   </div>
-  <a href="#top"></a>
-</div>
-
 
 <footer role="contentinfo">
     <div class="container">
@@ -531,18 +508,22 @@ data-event-label="high"
                 <div id="footerLinks">
                     <ul>
                         <li>
-                            <a href="https://open-sdg.org">Built using Open SDG</a>
+                            <a href="https://open-sdg.org" target="_blank" onclick="return confirm_alert('open-sdg', 'En');">
+                              Built using Open SDG
+                            </a>
                         </li>
                         
                         <li>
-                            
-                            <a href="mailto:dns-indikatoren@destatis.de" target="_blank">Contact us</a>
-                            
-                        </li>
+                              
+                                
+                                  <a href="mailto:dns-indikatoren@destatis.de">Contact us</a>
+                                
+                              
+                          </li>
                         <li>
-                            <a href="/dns-indicators_1/en/imprint/">Legal Notice</a>
-                            
-                        </li>
+                              <a href="/dns-indicators_1/en/imprint/ ">Legal Notice</a>
+                              
+                          </li>
                         
                         
                         </ul>
@@ -579,12 +560,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/dns-indicators_1/assets/js/sdg.js?v=20240816142618'></script>
+<script src='/dns-indicators_1/assets/js/sdg.js?v=20240819055830'></script>
 
 
     
     
-    <script src="/dns-indicators_1/assets/js/custom.js?v=20240816142618"></script><script>
+    <script src="/dns-indicators_1/assets/js/custom.js?v=20240819055830"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
@@ -592,3 +573,4 @@ data-event-label="high"
 
 </body>
 </html>
+
