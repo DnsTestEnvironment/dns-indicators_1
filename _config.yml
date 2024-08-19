@@ -25,24 +25,11 @@ country:
   name: Australia
   adjective: Australian
 create_goals:
+  layout: goal-by-target
   previous_next_links: false
-  goal_content_heading: ''
-  goals: []
 create_indicators:
-  previous_next_links: false
-create_pages:
-  - filename: ''
-    folder: /goals
-    layout: goals
-    title: general.goals
-  - filename: ''
-    folder: /reporting-status
-    layout: reportingstatus
-    title: status.reporting_status
-  - filename: ''
-    folder: /search
-    layout: search
-    title: search.search
+    layout: indicator
+create_pages: true
 custom_css: []
 custom_js:
   - /assets/js/custom.js
@@ -117,30 +104,6 @@ hide_empty_metadata: true
 hide_single_series: true
 hide_single_unit: true
 ignored_disaggregations: []
-indicator_config_form:
-  enabled: true
-  dropdowns: []
-  repository_link: /tree/develop/indicator-config
-  translation_link: ''
-indicator_data_form:
-  enabled: true
-  repository_link: /tree/develop/data
-indicator_metadata_form:
-  enabled: true
-  dropdowns: []
-  repository_link: /tree/develop/meta
-  translation_link: ''
-  language: ''
-  scopes:
-    - national
-    - global
-  exclude_fields: []
-  translated: false
-indicator_tabs:
-  tab_1: ''
-  tab_2: ''
-  tab_3: ''
-  tab_4: ''
 languages:
   - de
   - en
@@ -197,15 +160,6 @@ news:
 observation_attributes:
   - field: COMMENT_OBS
     label: ''
-progress_status:
-  status_heading: ''
-  status_help: ''
-  status_types: []
-progressive_web_app:
-  enabled: false
-  name: ''
-  short_name: ''
-  precaching: false
 proxy_indicators:
   label: ''
   description: ''
@@ -229,11 +183,6 @@ repository_url_data: 'https://DnsTestEnvironment.github.io/dns-data_1'
 repository_url_site: 'https://DnsTestEnvironment.github.io/dns-indicators_1'
 search_index_boost: []
 search_index_extra_fields: []
-site_config_form:
-  enabled: true
-  dropdowns: []
-  repository_link: /tree/develop/_data
-  translation_link: ''
 time_series_attributes:
   - field: COMMENT_TS
     label: indicator.footnote
