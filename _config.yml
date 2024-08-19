@@ -1,259 +1,98 @@
-analytics:
-  ua: ''
-  gtag: ''
-  gtm: ''
-  ga_prod: ''
-breadcrumbs:
-  goal:
-    - path: /
-      label: general.home
-    - path: /goals
-      label: general.goals
-  indicator:
-    - path: /
-      label: general.home
-    - path: /goals
-      label: general.goals
-  post:
-    - path: /
-      label: general.home
-    - path: /news
-      label: menu.updates
-cookie_consent_form:
-  enabled: false
-country:
-  name: Australia
-  adjective: Australian
-create_goals:
-  previous_next_links: false
-  goal_content_heading: ''
-  goals: []
-create_indicators:
-  previous_next_links: false
-create_pages:
-  - filename: ''
-    folder: /goals
-    layout: goals
-    title: general.goals
-  - filename: ''
-    folder: /reporting-status
-    layout: reportingstatus
-    title: status.reporting_status
-  - filename: ''
-    folder: /search
-    layout: search
-    title: search.search
-custom_css: []
-custom_js:
-  - /assets/js/custom.js
-data_edit_url: data
-data_fields:
-  units: ''
-  series: ''
-date_formats: []
-disclaimer:
-  phase: ''
-  message: ''
-  hidden: false
-email_contacts:
-  questions: test@example.com
-  suggestions: test@example.com
-  functional: test@example.com
-empty_metadata_placeholder: ''
-empty_metadata_placeholder_sources: ''
+# Jekyll configuration for Open SDG platform
+
+# Tell the Remote Theme plugin to use the Open SDG platform (Jekyll theme).
+remote_theme: open-sdg/open-sdg@2.2.1
+#remote_theme: brockfanning/open-sdg@observation-attributes
+
+# Replace this title as needed.
+title: general.site_title
+url: ""
 environment: staging
-footer_language_toggle: none
-footer_menu:
-  - path: /contact-us
-    translation_key: menu.contact_us
-  - path: 'https://twitter.com/MyTwitterAccount'
-    translation_key: general.twitter
-  - path: 'https://facebook.com/MyFacebookAccount'
-    translation_key: general.facebook
-  - path: /about/cookies-and-privacy/
-    translation_key: menu.cookies
-frontpage_cards:
-  - title: frontpage.download_all
-    content: ''
-    include: components/download-all-data.html
-    button_label: ''
-    button_link: ''
-    rule_color: ''
-  - title: Lorem ipsum
-    content: |
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi mollis
-      cursus est sed dapibus.
-    include: ''
-    button_label: Read more
-    button_link: 'https://example.com'
-    rule_color: ''
-  - title: Nam vestibulum
-    content: |
-      Nam vestibulum, purus quis porttitor imperdiet, nisl sem mollis nisl, a
-      interdum risus enim vitae tortor. Donec feugiat accumsan rutrum.
-    include: ''
-    button_label: Read more
-    button_link: 'https://example.com'
-    rule_color: ''
-frontpage_goals_grid:
-  title: frontpage.heading_short
-  description: frontpage.instructions_shorter
-frontpage_introduction_banner:
-  title: frontpage.intro_title
-  description: frontpage.intro_body
-goal_image_base: 'https://open-sdg.org/sdg-translations/assets/img/goals'
-goal_image_extension: ''
-goals_page:
-  title: general.goals
-  description: frontpage.instructions_shorter
-graph_color_headline: '#004466'
-graph_color_headline_high_contrast: '#55a6e5'
-graph_color_set: accessible
-graph_color_list: []
-graph_color_number: 0
-graph_title_from_series: false
-header_language_toggle: dropdown
-hide_empty_metadata: true
-hide_single_series: true
-hide_single_unit: true
-ignored_disaggregations: []
-indicator_config_form:
-  enabled: true
-  dropdowns: []
-  repository_link: /tree/develop/indicator-config
-  translation_link: ''
-indicator_data_form:
-  enabled: true
-  repository_link: /tree/develop/data
-indicator_metadata_form:
-  enabled: true
-  dropdowns: []
-  repository_link: /tree/develop/meta
-  translation_link: ''
-  language: ''
-  scopes:
-    - national
-    - global
-  exclude_fields: []
-  translated: false
-indicator_tabs:
-  tab_1: ''
-  tab_2: ''
-  tab_3: ''
-  tab_4: ''
-languages:
-  - de
-  - en
-languages_public: []
-logos: []
-map_layers: []
+
+# Pages
+collections:
+  pages:
+    output: true
+    permalink: /:path/
+  posts:
+    output: true
+    permalink: /news/:year/:month/:day/:title.html
+  indicators:
+    output: true
+  goals:
+    output: true
+
+# Tell Jekyll to use the Remote Theme plugin.
+plugins:
+  - jekyll-remote-theme
+  - jekyll-open-sdg-plugins
+
+# Exclude some files/folders.
+exclude:
+  - vendor
+  - scripts
+  - remotedata
+  - Gemfile
+  - Gemfile.lock
+  - README
+  - README.md
+  - LICENSE
+
+observation_attributes:
+  - field: COMMENT_OBS
+    label: ''
+
 map_options:
-  disaggregation_controls: false
-  minZoom: 5
-  maxZoom: 10
-  tileURL: ''
+  disaggregation_controls: true
+
+  # Control the limits on zooming in/out in the map:
+  minZoom: 0
+  maxZoom: 11
+  # If you would like to use tile (background) imagery, use these:
+  tileURL: https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png
   tileOptions:
-    id: ''
-    accessToken: ''
-    attribution: ''
-  colorRange: chroma.brewer.BuGn
-  noValueColor: '#f0f0f0'
+    id: mapbox.light
+    accessToken: pk.eyJ1IjoibW9ib3NzZSIsImEiOiJjazU1M2trazQwYnFwM2trYmdwNm9rOWxkIn0.u36w-RJPqoTGmivl_zED1w
+    attribution: <a href="https://www.openstreetmap.org/copyright">&copy; OpenStreetMap</a> contributors |<br class="visible-xs"> <a href="https://www.bkg.bund.de">&copy; GeoBasis-De / BKG 2023</a> |<br class="hidden-lg"> <a href="https://www.destatis.de/DE/Home/_inhalt.html">&copy; Statistisches Bundesamt (Destatis), 2023</a>
+  # Control the choropleth color range. See https://gka.github.io/chroma.js/#chroma-brewer
+  # 1 map color depending on goal --- start ---
+  colorRange: ["#F6E8EC", "#E3BAC6", "#D18CA1", "#BE5E7B", "#AB3055", "#A21942", "#821435", "#610F28", "#410A1A", "#20050D"]
+
+  # Set the color for boundaries that have no data.
+  noValueColor: 'rgba(255,255,255,0.2)'
+  # For documentation on the style options below, see here:
+  # https://leafletjs.com/reference-1.4.0.html#path-option
+  # Set the default style for boundaries in the map:
   styleNormal:
     weight: 1
     opacity: 1
+    color: '#888'
     fillOpacity: 0.7
-    color: '#888888'
-    dashArray: ''
+  # Set the style for boundaries that have been selected/highlighted:
   styleHighlighted:
     weight: 1
     opacity: 1
+    color: '#111'
     fillOpacity: 0.7
-    color: '#111111'
-    dashArray: ''
+  # Set the style for top-level boundaries that are displaying in other layers.
+  # Note: This is only applicable when using the "nested zoom" feature (see below).
   styleStatic:
     weight: 2
     opacity: 1
     fillOpacity: 0
     color: '#172d44'
-    dashArray: '5,5'
-menu:
-  - path: /
-    translation_key: general.home
-    dropdown: []
-  - path: /goals
-    translation_key: general.goals
-    dropdown: []
-  - path: /reporting-status
-    translation_key: menu.reporting_status
-    dropdown: []
-  - path: /news
-    translation_key: menu.updates
-    dropdown: []
-  - path: /faq
-    translation_key: menu.faq
-    dropdown: []
-  - path: /about
-    translation_key: menu.about
-    dropdown: []
-metadata_edit_url: metadata
-metadata_tabs:
-  - scope: national
-    title: indicator.national_metadata
-    description: indicator.national_metadata_blurb
-  - scope: global
-    title: indicator.global_metadata
-    description: indicator.global_metadata_blurb
-  - scope: sources
-    title: indicator.sources
-    description: ''
-meta_tags: []
-news:
-  category_links: false
-observation_attributes:
-  - field: COMMENT_OBS
-    label: ''
-progress_status:
-  status_heading: ''
-  status_help: ''
-  status_types: []
-progressive_web_app:
-  enabled: false
-  name: ''
-  short_name: ''
-  precaching: false
-proxy_indicators:
-  label: ''
-  description: ''
-#remote_data_prefix: 'https://mobosse.github.io/data-starter/'
-remote_data_prefix: "https://DnsTestEnvironment.github.io/dns-data_1"
-reporting_status:
-  title: status.reporting_status
-  description: status.description
-  disaggregation_tabs: false
-  status_types:
-    - value: notstarted
-      label: status.no_data_available
-      hide_on_goal_pages: false
-    - value: complete
-      label: status.reported_online
-      hide_on_goal_pages: false
-    - value: notapplicable
-      label: status.not_applicable
-      hide_on_goal_pages: false
-repository_url_data: 'https://github.com/DnsTestEnvironment/dns-data_1'
-repository_url_site: 'https://github.com/DnsTestEnvironment/dns-indicators_1'
-search_index_boost: []
-search_index_extra_fields: []
-site_config_form:
-  enabled: true
-  dropdowns: []
-  repository_link: /tree/develop/_data
-  translation_link: ''
-time_series_attributes:
-  - field: COMMENT_TS
-    label: indicator.footnote
-  - field: DATA_LAST_UPDATE
-    label: metadata_fields.national_data_update_url
-validate_indicator_config: false
-validate_site_config: false
-x_axis_label: ''
+    dashArray: 5,5
+
+map_layers:
+  - serviceUrl:  https:///Nachhaltige-Entwicklung-Deutschland.github.io/open-sdg-site-starter/assets/maps/boundariesKrs.geojson
+    min_zoom: 8
+    max_zoom: 11
+    staticBorders: true
+    subfolder: kreise
+    label: indicator.counties
+  - serviceUrl:  https:///Nachhaltige-Entwicklung-Deutschland.github.io/open-sdg-site-starter/assets/maps/boundaries.geojson
+    min_zoom: 0
+    max_zoom: 7
+    staticBorders: true
+    subfolder: laender
+    label: indicator.laender
