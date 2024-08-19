@@ -40,7 +40,7 @@ var opensdg = {
   },
 
   // Disaggregations which should be ignored on indicator pages.
-  ignoredDisaggregations: null,
+  ignoredDisaggregations: [],
 
   language: 'de',
 
@@ -121,7 +121,7 @@ var translations = {
         
         Indikator 8.3 -
         
-        Verhältnis der Bruttoanlageinvestitionen zum BIP - Indikatoren der Deutschen Nachhaltigkeitsstrategie
+        Verhältnis der Bruttoanlageinvestitionen zum BIP - general.site_title
     </title>
 
 
@@ -140,15 +140,13 @@ var translations = {
 <link rel="icon" type="image/x-icon" href="/dns-indicators_1/assets/img/favicons/favicon.ico" />
 
         
-        <link rel="manifest" href="/dns-indicators_1/manifest.json">
-        
 
         
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/dns-indicators_1/assets/css/style.css?v=20240819063307">
+        <link rel="stylesheet" href="/dns-indicators_1/assets/css/style.css?v=20240819065211">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -185,9 +183,9 @@ layout-indicator
     
 <div class="container">
   <div class="disclaimer-alert">
-    <strong class="phase-tag">beta</strong>
+    <strong class="phase-tag">Alpha-Version</strong>
     
-    Diese Seite befindet sich im Entwicklungsstadium. Wir freuen uns über Ihre <a href="mailto:dns-indikatoren@destatis.de">Kommentare</a>.
+    Diese Seite befindet sich im Entwicklungsstadium. Wir freuen uns über Ihre <a href="mailto:test@example.com">Kommentare</a>.
     
   </div>
 </div>
@@ -198,7 +196,7 @@ layout-indicator
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light flex-wrap align-items-start">
             <a class="navbar-brand" href="/dns-indicators_1/" id="home" aria-label="" title="">
-    <img src="/dns-indicators_1/assets/img/de/DNS_logo.png" alt="DESTATIS - Deutsche Nachhaltikeitsstrategie" />
+    <img src="/dns-indicators_1/assets/img/SDG_logo.png" alt="Ziele für Nachhaltige Entwicklung - " />
 </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="">
                 <span class="navbar-toggler-icon"></span>
@@ -208,52 +206,22 @@ layout-indicator
                     <ul class="navbar-nav" id="menu"><li class="nav-item ">
     <a class="nav-link" href="/dns-indicators_1/">Start</a>
 </li>
-<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-status" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Status
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="dropdown-menu-1-status"><li class=" ">
-    <a class="dropdown-item" href="/dns-indicators_1/status/">Methodik</a>
-</li>
-<li class=" ">
-    <a class="dropdown-item" href="/dns-indicators_1/status_summary/">Übersicht</a>
-</li>
-</ul>
-          </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-strategy" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Strategie
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="dropdown-menu-1-strategy"><li class=" ">
-    <a class="dropdown-item" href="/dns-indicators_1/strategy/dns/">Deutsche Nachhaltigkeitsstrategie</a>
-</li>
-<li class=" ">
-    <a class="dropdown-item" href="/dns-indicators_1/strategy/monitoring/">Monitoring</a>
-</li>
-<li class=" ">
-    <a class="dropdown-item" href="/dns-indicators_1/strategy/publications/">Publikationen</a>
-</li>
-<li class=" ">
-    <a class="dropdown-item" href="/dns-indicators_1/strategy/links/">Links</a>
-</li>
-</ul>
-          </li><li class="nav-item ">
-    <a class="nav-link" href="/dns-indicators_1/laender/">Bundesländer</a>
+<li class="nav-item ">
+    <a class="nav-link" href="/dns-indicators_1/goals">Ziele</a>
 </li>
 <li class="nav-item ">
-    <a class="nav-link" href="https://sdg-indikatoren.de">Globale Indikatoren <img class="link_btn" src="https://sdg-indikatoren.de/public/SDG Wheel_Transparent.png" title="Klicken Sie hier um zur Seite der SDG Indikatoren zu gelangen" alt="Link SDG" style="width:24px;height:24px;"/></a>
+    <a class="nav-link" href="/dns-indicators_1/reporting-status">Berichtsstatus</a>
 </li>
-<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-help" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Hilfe
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="dropdown-menu-1-help"><li class=" ">
-    <a class="dropdown-item" href="/dns-indicators_1/help/navigation/">Aufbau der Online Plattform</a>
+<li class="nav-item ">
+    <a class="nav-link" href="/dns-indicators_1/news">menu.updates</a>
 </li>
-<li class=" ">
-    <a class="dropdown-item" href="/dns-indicators_1/help/guidance/">Technische Hinweise</a>
+<li class="nav-item ">
+    <a class="nav-link" href="/dns-indicators_1/faq">menu.faq</a>
 </li>
-<li class=" ">
-    <a class="dropdown-item" href="/dns-indicators_1/help/faq/">FAQ</a>
+<li class="nav-item ">
+    <a class="nav-link" href="/dns-indicators_1/about">Über uns</a>
 </li>
 </ul>
-          </li></ul>
 
                 </div>
                 <div class="header-search-bar">
@@ -276,16 +244,19 @@ layout-indicator
 
 
 
-  <div class="language-toggle-container d-flex">
-    <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-de list-inline-item" style="opacity:0.3">
-            <span>
-                Deutsch
-            </span>
-        </li><li class="language-option-en list-inline-item">
-            <a class="language-toggle-link" href="/dns-indicators_1/en/8-3/">
-                English
+  <div class="language-toggle-container">
+  
+  <div class="btn-group language-toggle-dropdown  dropdown">
+    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="fa fa-globe"></i>
+      Deutsch
+    </button>
+    <ul class="dropdown-menu"><li>
+            <a class="dropdown-item" href="/dns-indicators_1/en/8-3/">
+              English
             </a>
-        </li></ul>
+          </li></ul>
+  </div>
 </div>
 
 
@@ -381,6 +352,8 @@ data-event-label="high"
 
 <script type="text/template" id="series_template">
   
+  <% if(serieses.length > 1) { %>
+  
     <h4>Zeitreihe</h4>
     <fieldset>
       <legend class="sr-only">Zeitreihe</legend>
@@ -390,6 +363,8 @@ data-event-label="high"
         <label><input type="radio" name="series" value="<%=seriesItem%>" tabindex=0 <%=checked ? 'checked' : ''%> /> <%=translations.t(seriesItem)%> <%=isProxy ? proxyPill : ''%></label>
       <% }); %>
     </fieldset>
+  
+  <% } %>
   
 </script>
 
@@ -404,7 +379,7 @@ data-event-label="high"
       
       <div class="col-4 col-md-3 col-lg-2 goal-icon goal-tiles">
         <a href="/dns-indicators_1/8/" aria-label=" 8" title="Zu den Indikatoren dieses Ziels">
-          <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/dns/de/8.png"
+          <img src="https://open-sdg.org/sdg-translations/assets/img/goals/de/8.png"
               alt="Menschenwürdige Arbeit und Wirtschaftswachstum - Ziel 8"
               id="goal-8"
               class="goal-icon-image goal-icon-image-" />
@@ -431,14 +406,17 @@ data-event-label="high"
 <nav>
     <ol aria-label="breadcrumb" class="breadcrumb" style="--bs-breadcrumb-divider: '&rsaquo;';">
         
-            <li class="breadcrumb-item">
+          <li class="breadcrumb-item">
                 <a href="/dns-indicators_1/">Start</a>
             </li>
-            <li class="breadcrumb-item">
-                <a href="/dns-indicators_1/8/" title="Dauerhaftes, inklusives und nachhaltiges Wirtschaftswachstum, produktive Vollbeschäftigung und menschenwürdige Arbeit für alle fördern">Ziel 8</a>
+          <li class="breadcrumb-item">
+                <a href="/dns-indicators_1/goals">Ziele</a>
             </li>
-            <li class="breadcrumb-item active">Indikator 8.3</li>
-        
+          
+          <li class="breadcrumb-item">
+              <a href="/dns-indicators_1/8/" title="Dauerhaftes, inklusives und nachhaltiges Wirtschaftswachstum, produktive Vollbeschäftigung und menschenwürdige Arbeit für alle fördern">Ziel 8</a>
+          </li>
+          
     </ol>
 </nav>
 
@@ -1704,9 +1682,9 @@ data-event-label="Change to embedded item tab"
                 data-on="click"
 data-event-category="Tab change"
 data-event-action="Change metadata view"
-data-event-label="Change to indicator.details tab"
+data-event-label="Change to indicator.national_metadata tab"
 
-            >Details</button>
+            >Nationale Metadaten</button>
         </li>
     
         
@@ -1718,37 +1696,16 @@ data-event-label="Change to indicator.details tab"
                 type="button"
                 class="nav-link "
                 data-bs-toggle="tab"
-                id="tab-content"
-                data-bs-target="#content"
-                aria-controls="content"
+                id="tab-global"
+                data-bs-target="#global"
+                aria-controls="global"
                 role="tab"
                 data-on="click"
 data-event-category="Tab change"
 data-event-action="Change metadata view"
-data-event-label="Change to indicator.contentAndProgress tab"
+data-event-label="Change to indicator.global_metadata tab"
 
-            >Inhalt und Entwicklung</button>
-        </li>
-    
-        
-        
-        
-        
-        <li role="presentation" class="nav-item">
-            <button
-                type="button"
-                class="nav-link "
-                data-bs-toggle="tab"
-                id="tab-history_1"
-                data-bs-target="#history_1"
-                aria-controls="history_1"
-                role="tab"
-                data-on="click"
-data-event-category="Tab change"
-data-event-action="Change metadata view"
-data-event-label="Change to indicator.history tab"
-
-            >Statusübersicht</button>
+            >Globale Metadaten</button>
         </li>
     
         
@@ -1789,7 +1746,7 @@ data-event-label="Change to indicator.sources tab"
     
     <div role="tabpanel" class="tab-pane active" id="national">
       <article>
-        <p>Diese Übersicht beinhaltet zusätzliche Informationen zu den oben dargestellten Indikatoren, wie eine kurze Definition des Indikators und eine Beschreibung des politisch festgelegten Zielwertes sowie die politische Intention für die Auswahl des Indikators.</p>
+        <p>Die für den jeweiligen SDG-Indikator zuständigen internationalen Organisationen (Custodian Agencies) veröffentlichen methodische Vorgaben zur Berechnung des Indikators - die sogenannten globalen Metadaten.<br /><br />Hier werden die am besten dazu geeigneten, national verfügbaren Zeitreihen bereitgestellt und ihre Vergleichbarkeit mit den globalen Metadaten ausgewiesen. Zugehörige methodische und länderspezifische Informationen dieser Zeitreihen finden Sie im nationalen Metadatenblatt.</p>
 
         
 <table class="table" style="width:100%; table-layout: fixed;">
@@ -2729,9 +2686,10 @@ data-event-label="Change to indicator.sources tab"
     
     
     
-    <div role="tabpanel" class="tab-pane " id="content">
+    <div role="tabpanel" class="tab-pane " id="global">
       <article>
-        
+        <p>Diese Übersicht stellt Informationen zu den globalen Metadaten des jeweiligen SDG-Indikators bereit. Die <a href="https://unstats.un.org/sdgs/metadata/">globalen Metadaten</a> werden durch die Statistische Division der Vereinten Nationen bereitgestellt.</p>
+
         
 <table class="table" style="width:100%; table-layout: fixed;">
   
@@ -2739,888 +2697,9 @@ data-event-label="Change to indicator.sources tab"
   
   
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
       
         
-      
-
-      
-      
-
-
-      
-         <!-- case: content -->
-          <p> <p><b>Text aus dem <a href="https://dns-indikatoren.de/assets/Publikationen/Indikatorenberichte/2022.pdf">Indikatorenbericht 2022 </a></b><br /><br />Die Bruttoanlageinvestitionen und das Bruttoinlandsprodukt (<abbr title="Bruttoinlandsprodukt" tabindex="0">BIP</abbr>) werden im Rahmen der Volkswirtschaftlichen Gesamtrechnungen (<abbr title="Volkswirtschaftliche Gesamtrechnungen" tabindex="0">VGR</abbr>) vom Statistischen Bundesamt ermittelt. Die Erstellung der <abbr title="Volkswirtschaftliche Gesamtrechnungen" tabindex="0">VGR</abbr> folgt international harmonisierten Regeln und Standards, wie dem Europäischen System Volkswirtschaftlicher Gesamtrechnungen (<abbr title="Europäische System Volkswirtschaftlicher Gesamtrechnungen" tabindex="0">ESVG</abbr>), und basiert auf allen verfügbaren, relevanten Datenquellen.<br /><br />Im Jahr 2021 lag der Anteil der Bruttoanlageinvestitionen am <abbr title="Bruttoinlandsprodukt" tabindex="0">BIP</abbr> für das gesamte Bundesgebiet bei 21,8 %, preisbereinigt bei 21,0 %. Der Indikator hat sich kurz- und mittelfristig betrachtet in die gewünschte Richtung entwickelt. Seit dem Jahr 2015 (20,0 %) ist ein leichter Anstieg der Quote zu verzeichnen. Mangels einer Definition, was als angemessene Entwicklung gilt, ergibt sich bei Betrachtung der letzten sechs Datenpunkte ein positives Bild. Gegenüber 1991 ist die Investitionsquote jedoch um 3,1 Prozentpunkte und gegenüber 2000 um 1,4 Prozentpunkte niedriger. Preisbereinigt liegt der Anteil der Bruttoanlageinvestitionen am <abbr title="Bruttoinlandsprodukt" tabindex="0">BIP</abbr> gegenüber 1991 um 1,1 Prozentpunkte zurück. Die Investitionsquote in Deutschland ist seit 1996 durchgehend unterhalb der Investitionsquote für den gesamten <abbr title="Organisation for Economic Co-operation and Development (Organisation für wirtschaftliche Zusammenarbeit und Entwicklung)" tabindex="0">OECD</abbr>-Raum (zuletzt 2020: 22,2 %). Betrug der Abstand zwischen 2001 und 2010 noch durchschnittlich –2,4 Prozentpunkte, so verringerte sich dieser im Zeitraum 2011 bis 2020 auf –1,0. In den Jahren 2015 bis 2021 stiegen die Bruttoanlageinvestitionen kräftig um 29,4 % und erreichten ein Niveau von 783,8 Milliarden Euro. Da der Anstieg des nominalen <abbr title="Bruttoinlandsprodukt" tabindex="0">BIP</abbr> im selben Zeitraum etwas geringer ausfiel (19,0 %), erhöhte sich die Investitionsquote nur leicht von 20,0 % auf 21,8 %. Das kräftigste nominale Wachstum ergab sich seit dem Jahr 2010 im Bereich der Wohnbauten (+92,6 %), während die Investitionen im Bereich der Nichtwohnbauten (sowohl im Hoch- als auch im Tiefbau) im selben Zeitraum weniger stark anstiegen (+52,7 %) und in den Jahren 2012 und 2015 sogar leicht rückläufig waren. Die Ausrüstungsinvestitionen erhöhten sich um 28,0 %. Im Vergleich zu 1991 verzeichneten demgegenüber die Investitionen in Forschung und Entwicklung sowie in Software und Datenbanken die stärksten Zuwächse. Ihr Volumen hat sich mehr als verdreifacht.<br /><br />Die Investitionstätigkeit hat sich im Zeitraum von 1991 bis 2021 stark vom Produzierenden Gewerbe hin zu den Dienstleistungsbereichen verlagert. Während 1991 noch 30,4 % der Anlageinvestitionen von Unternehmen des Produzierenden Gewerbes getätigt wurden, waren es 2021 nur noch 22,4 %. Im Jahr 2021 entfielen auf die Dienstleistungsbereiche 76,3 % der Bruttoanlageinvestitionen; 1991 waren es noch 67,9 %. Der größte investierende Bereich war das Grundstücks- und Wohnungswesen. Auf diesen entfielen im Jahr 2021 allein 33,1 %. Dem Staatssektor, dessen Investitionstätigkeiten verschiedenen Wirtschaftszweigen zugutekommen, wurden für das Jahr 2020 12,4 % <abbr title="beziehungsweise" tabindex="0">bzw.</abbr> für 2021 11,9 % der gesamtwirtschaftlichen Bruttoanlageinvestitionen zugerechnet.<br /><br />Bei Betrachtung nach Bundesländern war für das zuletzt vorliegende Berichtsjahr 2019 die höchste Investitionsquote in Niedersachen mit 27,6 % und die niedrigsten Investitionsquoten in Bremen mit 15,7 % und Nordrhein-Westfalen mit 16,4 % zu verzeichnen.</p>
- </p>
-        
-      
-
-      <!-- weather -->
-      
-
-      
-    
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-</table>
-
-      </article>
-    </div>
-    
-    
-    
-    
-    
-    <div role="tabpanel" class="tab-pane " id="history_1">
-      <article>
-        <p>In dieser Übersichtstabelle sind die Bewertungen des Indikators nach Stand der vorhergehenden Jahre dargestellt. Daran lässt sich ablesen, ob das Wettersymbol für einen Indikator in den vergangenen Jahren stabil oder eher volatil war. <b>(Bewertungen aus dem <a href="https://dns-indikatoren.de/publications_reports/">Indikatorenbericht 2022 </a>)</b></p>
-
-        <!-- Count the non-empty histories (up to 2) -->
-
-
-
-
-  <div class="row">
-    
-    
-
-      
-
-      
-
-        
-        
-        <div class="col-md-6">
-          <!--  -->
           
-<table class="table" style="width:100%; table-layout: fixed;">
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
       
         
       
@@ -3630,702 +2709,55 @@ data-event-label="Change to indicator.sources tab"
 
 
       
-
-      <!-- weather -->
-      
         
-           <!-- leaves only weather_indicator_1_target-->
-            <tr id="indAndtarg">
-              <th scope="row" style="padding-right: 10px; text-align: left; width: 130px;">Indikator </th>
-              <td colspan="4">
-                <p>8.3 Verhältnis der Bruttoanlageinvestitionen zum BIP</p>
+          <tr id="everythingElse">
+            <th scope="row" style="text-align: left; width: 130px;">Indikatorenbezeichnung </th>
+            <td>
+              
+                <p>Verhältnis der Bruttoanlageinvestitionen zum BIP</p>
 
-              </td>
-            </tr>
-          
-        
-      
-
-      
-    
-  
-      
-        
-      
-
-      
-      
-
-
-      
-
-      <!-- weather -->
-      
-        
-           <!-- leaves only weather_indicator_1_target-->
-            <tr id="indAndtarg">
-              <th scope="row" style="padding-right: 10px; text-align: left; width: 130px;">Ziel </th>
-              <td colspan="4">
-                <p>Angemessene Entwicklung des Anteils, Beibehaltung bis 2030</p>
-
-              </td>
-            </tr>
-          
-        
-      
-
-      
-    
-  
-      
-        
-      
-
-      
-      
-
-
-      
-
-      <!-- weather -->
-      
-        
-      
-
-      
-        
-        
-        
-        
-        
-
-        
-        
-        
-        <tr id="years">
-          <th scope="row" style="padding-right: 10px; text-align: left; width: 130px;">Jahr </th>
-          
-            <td align="left" style="margin-bottom: 15px;">
-              <p><p>2018</p>
-</p>
+              
             </td>
-          
-          
-            <td align="left" style="margin-bottom: 15px;">
-              <p><p>2019</p>
-</p>
-            </td>
-          
-          
-            <td align="left" style="margin-bottom: 15px;">
-              <p><p>2020</p>
-</p>
-            </td>
-          
-          
-            <td align="left" style="margin-bottom: 15px;">
-              <p><p>2021</p>
-</p>
-            </td>
-          
-        </tr>
-      
-    
-  
-      
-        
-          
-      
-        
-      
-
-      
-      
-
-
-      
-
-      <!-- weather -->
-      
-        
-      
-
-      
-    
-  
-      
-        
-          
-      
-        
-      
-
-      
-      
-
-
-      
-
-      <!-- weather -->
-      
-        
-      
-
-      
-    
-  
-      
-        
-          
-      
-        
-      
-
-      
-      
-
-
-      
-
-      <!-- weather -->
-      
-        
-      
-
-      
-    
-  
-      
-        
-          
-      
-        
-      
-
-      
-      
-
-
-      
-
-      <!-- weather -->
-      
-        
-      
-
-      
-    
-  
-      
-        
-          
-      
-        
-      
-
-      
-      
-
-
-      
-
-      <!-- weather -->
-      
-        
-      
-
-      
-    
-  
-      
-        
-          
-      
-        
-      
-
-      
-      
-
-
-      
-
-      <!-- weather -->
-      
-        
-      
-
-      
-    
-  
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-      
-
-      
-      
-
-
-      
-
-      <!-- weather -->
-      
-        
-          
-        
-      
-
-      
-    
-  
-      
-        
-          
-      
-        
-      
-
-      
-      
-
-
-      
-
-      <!-- weather -->
-      
-        
-          
-        
-      
-
-       <!--weather_indicator_1_target_1_item_a-->
-        
-          
-          
-          
-          
-
-          
-             <!--weather_indicator_(1...3)_target_(1...4)_category-->
-            
-            
-
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
-              
-
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
-              
-
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
-              
-
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
-              
-            
-          
-             <!--weather_indicator_(1...3)_target_(1...4)_category-->
-            
-            
-
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
-              
-
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
-              
-
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
-              
-
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
-              
-            
-          
-             <!--weather_indicator_(1...3)_target_(1...4)_category-->
-            
-            
-
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
-              
-
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
-              
-
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
-              
-
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
-              
-            
-          
-             <!--weather_indicator_(1...3)_target_(1...4)_category-->
-            
-            
-
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
-              
-
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
-              
-
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
-              
-
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
-              
-            
-          
-             <!--weather_indicator_(1...3)_target_(1...4)_category-->
-            
-            
-
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
-              
-
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
-              
-
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
-              
-
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
-              
-            
-          
-             <!--weather_indicator_(1...3)_target_(1...4)_category-->
-            
-            
-
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
-              
-
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
-              
-
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
-              
-
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
-              
-            
-          
-             <!--weather_indicator_(1...3)_target_(1...4)_category-->
-            
-            
-
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
-              
-
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
-              
-
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
-              
-
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
-              
-            
-          
-             <!--weather_indicator_(1...3)_target_(1...4)_category-->
-            
-            
-
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
-              
-
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
-              
-
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
-              
-
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
-               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
-              
-            
-          
-          
-
-
-
-          <tr id="items">
-            <th scope="row" style="padding-right: 10px; text-align: left; width: 130px;">Bewertung </th>
-            
-              <td align="left" style="padding-left: 0px;padding-right: 0px; width: auto">
-                <a href=" /dns-indicators_1/status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/Sonne.png" title="Sowohl der Durchschnittswert als auch die vorangegangene jährliche Veränderung deuteten in 2018 in die richtige Richtung." alt="<p>Sonne</p>
-" class="responsiveWeather" style="border: transparent"/></a>
-              </td>
-            
-
-            
-              <td align="left" style="padding-left: 0px;padding-right: 0px; width: auto">
-                <a href=" /dns-indicators_1/status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/Sonne.png" title="Sowohl der Durchschnittswert als auch die vorangegangene jährliche Veränderung deuteten in 2019 in die richtige Richtung." alt="<p>Sonne</p>
-" class="responsiveWeather" style="border: transparent"/></a>
-              </td>
-            
-
-            
-              <td align="left" style="padding-left: 0px;padding-right: 0px; width: auto">
-                <a href=" /dns-indicators_1/status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/Sonne.png" title="Sowohl der Durchschnittswert als auch die vorangegangene jährliche Veränderung deuteten in 2020 in die richtige Richtung." alt="<p>Sonne</p>
-" class="responsiveWeather" style="border: transparent"/></a>
-              </td>
-            
-
-            
-              <td align="left" style="padding-left: 0px;padding-right: 0px; width: auto">
-                <a href=" /dns-indicators_1/status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/Sonne.png" title="Sowohl der Durchschnittswert als auch die vorangegangene jährliche Veränderung deuteten in 2021 in die richtige Richtung." alt="<p>Sonne</p>
-" class="responsiveWeather" style="border: transparent"/></a>
-              </td>
-            
           </tr>
-
-
-
         
-      
-    
-  
-      
-        
-      
-
-      
-      
-
-
       
 
       <!-- weather -->
       
-        
-          
-        
-      
 
       
     
   
       
         
+          
+      
+        
+          
+      
+        
       
 
       
       
 
 
+      
+        
+          <tr id="everythingElse">
+            <th scope="row" style="text-align: left; width: 130px;">Unterzielnummerierung </th>
+            <td>
+              
+                <p>8.3.1</p>
+
+              
+            </td>
+          </tr>
+        
       
 
       <!-- weather -->
       
-        
-          
-        
-      
-
-      
-    
-  
-      
-        
-      
-
-      
-      
-
-
-      
-
-      <!-- weather -->
-      
-        
-          
-        
-      
-
-      
-    
-  
-      
-        
-      
-
-      
-      
-
-
-      
-
-      <!-- weather -->
-      
-        
-          
-        
-      
-
-      
-    
-  
-      
-        
-      
-
-      
-      
-
-
-      
-
-      <!-- weather -->
-      
-        
-          
-        
-      
-
-      
-    
-  
-      
-        
-      
-
-      
-      
-
-
-      
-
-      <!-- weather -->
-      
-        
-          
-        
-      
 
       
     
@@ -4345,324 +2777,174 @@ data-event-label="Change to indicator.sources tab"
       
         
           
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   
@@ -5289,12 +3571,6 @@ data-event-label="Change to indicator.sources tab"
   
   
 </table>
-
-        </div>
-      
-    
-  </div>
-
 
       </article>
     </div>
@@ -7299,13 +5575,15 @@ data-event-label="Change to indicator.sources tab"
   
 
 
-  <a class="btn btn-primary" href="http://prose.io/#DnsTestEnvironment/dns-data/edit/develop/data/indicator_8-3.csv">Daten bearbeiten</a>
+  <a class="btn btn-primary" href="data">Daten bearbeiten</a>
   
 
   
-  <a class="btn btn-primary" href="http://prose.io/#DnsTestEnvironment/dns-data/edit/develop/meta/8-3.md">Metadaten bearbeiten</a>
+  <a class="btn btn-primary" href="metadata">Metadaten bearbeiten</a>
   
 
+  
+  <a class="btn btn-primary" href="config"></a>
   
 
 </div>
@@ -7336,18 +5614,33 @@ data-event-label="Change to indicator.sources tab"
                         </li>
                         
                         <li>
+                              <a href="/dns-indicators_1/contact-us ">Kontakt</a>
+                              
+                          </li>
+                        <li>
                               
                                 
-                                  <a href="mailto:dns-indikatoren@destatis.de">Kontakt</a>
+                                  <a href="https://twitter.com/MyTwitterAccount"><i class="fa fa-twitter" aria-hidden="true"></i>@destatis</a></a>
                                 
                               
                           </li>
                         <li>
-                              <a href="/dns-indicators_1/imprint/ ">Im­pres­s­um</a>
+                              
+                                
+                                  <a href="https://facebook.com/MyFacebookAccount">general.facebook</a>
+                                
+                              
+                          </li>
+                        <li>
+                              <a href="/dns-indicators_1/about/cookies-and-privacy/ ">Cookies</a>
                               
                           </li>
                         
                         
+                        
+                        <li>
+                            <a href="/dns-indicators_1/config">Configuration</a>
+                        </li>
                         </ul>
                 </div>
             </div>
@@ -7391,12 +5684,12 @@ data-event-label="Change to indicator.sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/dns-indicators_1/assets/js/sdg.js?v=20240819063307'></script>
+<script src='/dns-indicators_1/assets/js/sdg.js?v=20240819065211'></script>
 
 
     
     
-    <script src="/dns-indicators_1/assets/js/custom.js?v=20240819063307"></script><script>
+    <script src="/dns-indicators_1/assets/js/custom.js?v=20240819065211"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

@@ -1,8 +1,3 @@
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/dns-indicators_1/service-worker.js');
-    });
-}
 /**
  * This function returns a javascript object containing autotrack.js properties.
  *
@@ -1220,9 +1215,9 @@ $(document).ready(function() {
     });
 });
 opensdg.chartColors = function(indicatorId) {
-  var colorSet = "goal";
-  var numberOfColors = 9;
-  var customColorList = null;
+  var colorSet = "accessible";
+  var numberOfColors = 0;
+  var customColorList = [];
 
   this.goalNumber = parseInt(indicatorId.slice(indicatorId.indexOf('_')+1,indicatorId.indexOf('-')));
   this.goalColors = [['891523', 'ef7b89', '2d070b', 'f4a7b0', 'b71c2f', 'ea4f62', '5b0e17', 'fce9eb'],
@@ -3257,8 +3252,8 @@ var mapView = function () {
     $('.map').show();
     $('#map').sdgMap({
       indicatorId: indicatorId,
-      mapOptions: {"disaggregation_controls":true,"minZoom":0,"maxZoom":11,"tileURL":"https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png","tileOptions":{"id":"mapbox.light","accessToken":"pk.eyJ1IjoibW9ib3NzZSIsImEiOiJjazU1M2trazQwYnFwM2trYmdwNm9rOWxkIn0.u36w-RJPqoTGmivl_zED1w","attribution":"<a href=\"https://www.openstreetmap.org/copyright\">&copy; OpenStreetMap</a> contributors |<br class=\"visible-xs\"> <a href=\"https://www.bkg.bund.de\">&copy; GeoBasis-De / BKG 2024</a> |<br class=\"hidden-lg\"> <a href=\"https://www.destatis.de/DE/Home/_inhalt.html\">&copy; Statistisches Bundesamt (Destatis), 2024</a>"},"colorRange":[["#FCE9EB","#F7BDC4","#F2929D","#ED6676","#E83A4F","#E5243B","#B71D2F","#891623","#5C0E18","#2E070C"],["#FCF8EB","#F7E9C2","#F2DB9A","#EDCD72","#E8BE49","#E5B735","#CEA530","#A08025","#735C1B","#453710"],["#EDF5EB","#C9E2C3","#A6CF9C","#82BC74","#5EA94C","#4C9F38","#3D7F2D","#2E5F22","#1E4016","#0F200B"],["#F9E8EA","#EEBAC0","#E28C96","#D65E6C","#CB3042","#C5192D","#9E1424","#760F1B","#4F0A12","#270509"],["#FFEBE9","#FFC4BC","#FF9D90","#FF7564","#FF4E37","#FF3A21","#CC2E1A","#992314","#66170D","#330C07"],["#E9F8FB","#BEEBF6","#93DEF0","#67D1EA","#3CC4E5","#26BDE2","#1E97B5","#177188","#0F4C5A","#08262D"],["#FFF9E7","#FEEDB6","#FEE185","#FDD554","#FCC923","#FCC30B","#CA9C09","#977507","#654E04","#322702"],["#F6E8EC","#E3BAC6","#D18CA1","#BE5E7B","#AB3055","#A21942","#821435","#610F28","#410A1A","#20050D"],["#FFF0E9","#FED2BE","#FEB492","#FE9666","#FD783B","#FD6925","#CA541E","#983F16","#652A0F","#331507"],["#FCE7F0","#F5B8D1","#EE89B3","#E75A95","#E02B76","#DD1367","#B10F52","#850B3E","#580829","#2C0415"],["#FFF5E6","#FEE2B3","#FECE80","#FEBA4D","#FDA71A","#FD9D00","#CA7E00","#985E00","#653F00","#331F00"],["#FAF5EA","#EFE0C0","#E4CC96","#D9B86C","#CEA342","#C9992D","#A17A24","#795C1B","#503D12","#281F09"],["#ECF2EC","#C5D8C7","#9FBFA2","#79A57C","#528B57","#3F7E44","#326536","#264C29","#19321B","#0D190E"],["#E7F5FB","#B6E0F4","#85CBEC","#54B6E4","#23A1DD","#0A97D9","#0879AE","#065B82","#043C57","#021E2B"],["#EEF9EA","#CCECBF","#ABE095","#89D36B","#67C640","#56C02B","#459A22","#34731A","#224D11","#112609"],["#E6F0F5","#B3D2E2","#80B4CE","#4D95BA","#1A77A7","#00689D","#00537E","#003E5E","#002A3F","#00151F"],["#E8EDF0","#BAC8D2","#8CA4B5","#5E7F97","#305A79","#19486A","#143A55","#0F2B40","#0A1D2A","#050E15"]],"noValueColor":"rgba(255,255,255,0.2)","styleNormal":{"weight":1,"opacity":1,"color":"#888","fillOpacity":0.7},"styleHighlighted":{"weight":1,"opacity":1,"color":"#111","fillOpacity":0.7},"styleStatic":{"weight":2,"opacity":1,"fillOpacity":0,"color":"#172d44","dashArray":55}},
-      mapLayers: [{"serviceUrl":"https://DnsTestEnvironment.github.io/dns-indicators_1/assets/maps/boundariesKrs.geojson","min_zoom":8,"max_zoom":11,"staticBorders":true,"subfolder":"kreise","label":"indicator.counties"},{"serviceUrl":"https://DnsTestEnvironment.github.io/dns-indicators_1/assets/maps/boundaries.geojson","min_zoom":0,"max_zoom":7,"staticBorders":true,"subfolder":"laender","label":"indicator.laender"}],
+      mapOptions: {"disaggregation_controls":false,"minZoom":5,"maxZoom":10,"tileURL":"","tileOptions":{"id":"","accessToken":"","attribution":""},"colorRange":"chroma.brewer.BuGn","noValueColor":"#f0f0f0","styleNormal":{"weight":1,"opacity":1,"fillOpacity":0.7,"color":"#888888","dashArray":""},"styleHighlighted":{"weight":1,"opacity":1,"fillOpacity":0.7,"color":"#111111","dashArray":""},"styleStatic":{"weight":2,"opacity":1,"fillOpacity":0,"color":"#172d44","dashArray":"5,5"}},
+      mapLayers: [],
       precision: precision,
       precisionItems: precisionItems,
       decimalSeparator: decimalSeparator,
@@ -3285,7 +3280,7 @@ var indicatorView = function (model, options) {
     var helpers = 
 (function() {
 
-  var HIDE_SINGLE_SERIES = false;
+  var HIDE_SINGLE_SERIES = true;
 var HIDE_SINGLE_UNIT = true;
 var PROXY_PILL = '<span aria-describedby="proxy-description" class="proxy-pill">' + translations.t("indicator.proxy") + '</span>';
 
@@ -3567,14 +3562,14 @@ function updateHeadlineColor(contrast, chartInfo, indicatorId) {
  */
 //Override: No Headline Color
 //function getHeadlineColor(contrast) {
-    //return isHighContrast(contrast) ? '#FFDD00' : '#e5243b#dda63a#4c9f38#c5192d#ff3a21#26bde2#fcc30b#a21942#fd6925#dd1367#fd9d24#bf8b2e#3f7e44#0a97d9#56c02b#00689d#19486a';
+    //return isHighContrast(contrast) ? '#55a6e5' : '#004466';
 function getHeadlineColor(contrast, goalNumber) {
 
   var headlineColors = ["#e5243b", "#dda63a", "#4c9f38", "#c5192d", "#ff3a21", "#26bde2", "#fcc30b", "#a21942", "#fd6925", "#dd1367", "#fd9d24", "#bf8b2e", "#3f7e44", "#0a97d9", "#56c02b", "#00689d", "#19486a"];
   var headlineColor = headlineColors[goalNumber-1];
   var htmlString = '' + headlineColor + '';
   console.log("goalNumber: ", htmlString);
-    return isHighContrast(contrast) ? '#FFDD00' : htmlString;
+    return isHighContrast(contrast) ? '#55a6e5' : htmlString;
 }
 
 /**
@@ -4650,9 +4645,10 @@ function updateChartDownloadButton(table) {
  * @param {null|undefined|Float|String} value
  * @param {Object} info
  * @param {Object} context
+ * @param {Object} additionalInfo
  * @return {null|undefined|Float|String}
  */
-function alterDataDisplay(value, info, context) {
+function alterDataDisplay(value, info, context, additionalInfo) {
     // If value is empty, we will not alter it.
     if (value == null || value == undefined) {
         return value;
@@ -4671,51 +4667,62 @@ function alterDataDisplay(value, info, context) {
     opensdg.dataDisplayAlterations.forEach(function (callback) {
         altered = callback(altered, info, context);
     });
-    // Now apply our custom precision control if needed.
-
-    // Special treatment for numbers on y axis: If stepSize is defined, they should display decimal places as follows:
-    // StepSize >= 1 --> 0 decimal places, Stepsize >= 0.1 --> 1 decimal place, StepSize >= 0.01 --> 2 decimal places ...
-    if (context == 'chart y-axis tick' && VIEW._graphStepsize && VIEW.graphStepsize != 0 && VIEW.graphStepsize != '') {
-      precision = Math.ceil(Math.log(1 / VIEW._graphStepsize.step) / Math.LN10);
-      if (precision < 0) {
-        precision = 0
-      }
-    }
-    else {
-      var precision = VIEW._precision
-    };
     // If the returned value is not a number, use the legacy logic for
     // precision and decimal separator.
     if (typeof altered !== 'number') {
         // Now apply our custom precision control if needed.
-
-        if (precision || precision === 0) {
-            altered = Number.parseFloat(altered).toFixed(precision);
+        if (VIEW._precision || VIEW._precision === 0) {
+            altered = Number.parseFloat(altered).toFixed(VIEW._precision);
         }
         // Now apply our custom decimal separator if needed.
         if (OPTIONS.decimalSeparator) {
             altered = altered.toString().replace('.', OPTIONS.decimalSeparator);
         }
-        // Apply thousands seperator if needed
-        if (OPTIONS.thousandsSeparator && precision <=3){
-            altered = altered.toString().replace(/\B(?=(\d{3})+(?!\d))/g, OPTIONS.thousandsSeparator);
-        }
     }
-
     // Otherwise if we have a number, use toLocaleString instead.
     else {
         var localeOpts = {};
         if (VIEW._precision || VIEW._precision === 0) {
-            localeOpts.minimumFractionDigits = precision;
-            localeOpts.maximumFractionDigits = precision;
+            localeOpts.minimumFractionDigits = VIEW._precision;
+            localeOpts.maximumFractionDigits = VIEW._precision;
         }
         altered = altered.toLocaleString(opensdg.language, localeOpts);
-        // Apply thousands seperator if needed
-        if (OPTIONS.thousandsSeparator && precision <=3 && opensdg.language == 'de'){
-            altered = altered.replace('.', OPTIONS.thousandsSeparator);
-        }
+    }
+    // Now let's add any footnotes from observation attributes.
+    var obsAttributes = [];
+    if (context === 'chart tooltip') {
+        var dataIndex = additionalInfo.dataIndex;
+        obsAttributes = info.observationAttributes[dataIndex];
+    }
+    else if (context === 'table cell') {
+        var row = additionalInfo.row,
+            col = additionalInfo.col,
+            obsAttributesTable = additionalInfo.observationAttributesTable;
+        obsAttributes = obsAttributesTable.data[row][col];
+    }
+    if (obsAttributes.length > 0) {
+        var obsAttributeFootnoteNumbers = obsAttributes.map(function(obsAttribute) {
+            return getObservationAttributeFootnoteSymbol(obsAttribute.value, context);
+        });
+        altered += ' ' + obsAttributeFootnoteNumbers.join(' ');
     }
     return altered;
+}
+
+/**
+ * Convert a number into a string for observation atttribute footnotes.
+ *
+ * @param {string} value
+ * @param {string} context
+ * @returns {string} Number converted into unicode character for footnotes.
+ */
+function getObservationAttributeFootnoteSymbol(value, context) {
+  if (context === 'chart tooltip' || context === 'table cell') {
+    return value;
+  }
+  else{
+    return context + translations.t(value);
+  }
 }
 
   /**
@@ -5228,8 +5235,8 @@ var indicatorInit = function () {
                     var view = new indicatorView(model, {
                         rootElement: '#indicatorData',
                         legendElement: '#plotLegend',
-                        decimalSeparator: ',',
-                        thousandsSeparator: ' ',
+                        decimalSeparator: '',
+                        thousandsSeparator: '',
                         maxChartHeight: 420,
                         tableColumnDefs: [
                             { maxCharCount: 25 }, // nowrap
@@ -6112,7 +6119,7 @@ $(function() {
             this.needsMapUpdate = false;
             this.seriesColumn = 'Series';
             this.unitsColumn = 'Units';
-            this.displayForm = true;
+            this.displayForm = false;
             this.updateDisaggregations(plugin.startValues);
         },
 
