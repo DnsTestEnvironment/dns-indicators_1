@@ -117,7 +117,7 @@ var translations = {
         ================================================== -->
 
         
-    <title>Status der Indikatoren - Übersicht - general.site_title</title>
+    <title>Status der Indikatoren - Übersicht - Indikatoren der Deutschen Nachhaltigkeitsstrategie</title>
 
 
 
@@ -135,13 +135,15 @@ var translations = {
 <link rel="icon" type="image/x-icon" href="/dns-indicators_1/assets/img/favicons/favicon.ico" />
 
         
+        <link rel="manifest" href="/dns-indicators_1/manifest.json">
+        
 
         
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/dns-indicators_1/assets/css/style.css?v=20240819065211">
+        <link rel="stylesheet" href="/dns-indicators_1/assets/css/style.css?v=20240819070405">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -178,9 +180,9 @@ layout-status_summary
     
 <div class="container">
   <div class="disclaimer-alert">
-    <strong class="phase-tag">Alpha-Version</strong>
+    <strong class="phase-tag">beta</strong>
     
-    Diese Seite befindet sich im Entwicklungsstadium. Wir freuen uns über Ihre <a href="mailto:test@example.com">Kommentare</a>.
+    Diese Seite befindet sich im Entwicklungsstadium. Wir freuen uns über Ihre <a href="mailto:dns-indikatoren@destatis.de">Kommentare</a>.
     
   </div>
 </div>
@@ -191,7 +193,7 @@ layout-status_summary
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light flex-wrap align-items-start">
             <a class="navbar-brand" href="/dns-indicators_1/" id="home" aria-label="" title="">
-    <img src="/dns-indicators_1/assets/img/SDG_logo.png" alt="Ziele für Nachhaltige Entwicklung - " />
+    <img src="/dns-indicators_1/assets/img/de/DNS_logo.png" alt="DESTATIS - Deutsche Nachhaltikeitsstrategie" />
 </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="">
                 <span class="navbar-toggler-icon"></span>
@@ -201,22 +203,52 @@ layout-status_summary
                     <ul class="navbar-nav" id="menu"><li class="nav-item ">
     <a class="nav-link" href="/dns-indicators_1/">Start</a>
 </li>
-<li class="nav-item ">
-    <a class="nav-link" href="/dns-indicators_1/goals">Ziele</a>
+<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-status" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Status
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdown-menu-1-status"><li class=" ">
+    <a class="dropdown-item" href="/dns-indicators_1/status/">Methodik</a>
 </li>
-<li class="nav-item ">
-    <a class="nav-link" href="/dns-indicators_1/reporting-status">Berichtsstatus</a>
-</li>
-<li class="nav-item ">
-    <a class="nav-link" href="/dns-indicators_1/news">menu.updates</a>
-</li>
-<li class="nav-item ">
-    <a class="nav-link" href="/dns-indicators_1/faq">menu.faq</a>
-</li>
-<li class="nav-item ">
-    <a class="nav-link" href="/dns-indicators_1/about">Über uns</a>
+<li class=" active">
+    <a class="dropdown-item" href="/dns-indicators_1/status_summary/">Übersicht</a>
 </li>
 </ul>
+          </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-strategy" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Strategie
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdown-menu-1-strategy"><li class=" ">
+    <a class="dropdown-item" href="/dns-indicators_1/strategy/dns/">Deutsche Nachhaltigkeitsstrategie</a>
+</li>
+<li class=" ">
+    <a class="dropdown-item" href="/dns-indicators_1/strategy/monitoring/">Monitoring</a>
+</li>
+<li class=" ">
+    <a class="dropdown-item" href="/dns-indicators_1/strategy/publications/">Publikationen</a>
+</li>
+<li class=" ">
+    <a class="dropdown-item" href="/dns-indicators_1/strategy/links/">Links</a>
+</li>
+</ul>
+          </li><li class="nav-item ">
+    <a class="nav-link" href="/dns-indicators_1/laender/">Bundesländer</a>
+</li>
+<li class="nav-item ">
+    <a class="nav-link" href="https://sdg-indikatoren.de">Globale Indikatoren <img class="link_btn" src="https://sdg-indikatoren.de/public/SDG Wheel_Transparent.png" title="Klicken Sie hier um zur Seite der SDG Indikatoren zu gelangen" alt="Link SDG" style="width:24px;height:24px;"/></a>
+</li>
+<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-help" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Hilfe
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdown-menu-1-help"><li class=" ">
+    <a class="dropdown-item" href="/dns-indicators_1/help/navigation/">Aufbau der Online Plattform</a>
+</li>
+<li class=" ">
+    <a class="dropdown-item" href="/dns-indicators_1/help/guidance/">Technische Hinweise</a>
+</li>
+<li class=" ">
+    <a class="dropdown-item" href="/dns-indicators_1/help/faq/">FAQ</a>
+</li>
+</ul>
+          </li></ul>
 
                 </div>
                 <div class="header-search-bar">
@@ -239,19 +271,16 @@ layout-status_summary
 
 
 
-  <div class="language-toggle-container">
-  
-  <div class="btn-group language-toggle-dropdown  dropdown">
-    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-      <i class="fa fa-globe"></i>
-      Deutsch
-    </button>
-    <ul class="dropdown-menu"><li>
-            <a class="dropdown-item" href="/dns-indicators_1/en/status_summary/">
-              English
+  <div class="language-toggle-container d-flex">
+    <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-de list-inline-item" style="opacity:0.3">
+            <span>
+                Deutsch
+            </span>
+        </li><li class="language-option-en list-inline-item">
+            <a class="language-toggle-link" href="/dns-indicators_1/en/status_summary/">
+                English
             </a>
-          </li></ul>
-  </div>
+        </li></ul>
 </div>
 
 
@@ -313,7 +342,7 @@ data-event-label="high"
   <div class="goal reporting-status-item">
     <div>
         <a href="/dns-indicators_1/1/">
-        <img src="https://open-sdg.org/sdg-translations/assets/img/goals/de/1.png" alt="Keine Armut - Ziel 1" width="150" height="150" class="goal-icon-1 goal-icon-image goal-icon-image-"/>
+        <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/dns/de/1.png" alt="Keine Armut - Ziel 1" width="150" height="150" class="goal-icon-1 goal-icon-image goal-icon-image-"/>
         </a>
         <!-- <h3 class="status-goal">
             <a href="/dns-indicators_1/1/">Keine Armut</a>
@@ -949,7 +978,7 @@ data-event-label="high"
   </div> <!--class="goal"--><div class="goal reporting-status-item">
     <div>
         <a href="/dns-indicators_1/2/">
-        <img src="https://open-sdg.org/sdg-translations/assets/img/goals/de/2.png" alt="Kein Hunger - Ziel 2" width="150" height="150" class="goal-icon-2 goal-icon-image goal-icon-image-"/>
+        <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/dns/de/2.png" alt="Kein Hunger - Ziel 2" width="150" height="150" class="goal-icon-2 goal-icon-image goal-icon-image-"/>
         </a>
         <!-- <h3 class="status-goal">
             <a href="/dns-indicators_1/2/">Kein Hunger</a>
@@ -2013,7 +2042,7 @@ data-event-label="high"
   </div> <!--class="goal"--><div class="goal reporting-status-item">
     <div>
         <a href="/dns-indicators_1/3/">
-        <img src="https://open-sdg.org/sdg-translations/assets/img/goals/de/3.png" alt="Gesundheit und Wohlergehen - Ziel 3" width="150" height="150" class="goal-icon-3 goal-icon-image goal-icon-image-"/>
+        <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/dns/de/3.png" alt="Gesundheit und Wohlergehen - Ziel 3" width="150" height="150" class="goal-icon-3 goal-icon-image goal-icon-image-"/>
         </a>
         <!-- <h3 class="status-goal">
             <a href="/dns-indicators_1/3/">Gesundheit und Wohlergehen</a>
@@ -4764,7 +4793,7 @@ data-event-label="high"
   </div> <!--class="goal"--><div class="goal reporting-status-item">
     <div>
         <a href="/dns-indicators_1/4/">
-        <img src="https://open-sdg.org/sdg-translations/assets/img/goals/de/4.png" alt="Hochwertige Bildung - Ziel 4" width="150" height="150" class="goal-icon-4 goal-icon-image goal-icon-image-"/>
+        <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/dns/de/4.png" alt="Hochwertige Bildung - Ziel 4" width="150" height="150" class="goal-icon-4 goal-icon-image goal-icon-image-"/>
         </a>
         <!-- <h3 class="status-goal">
             <a href="/dns-indicators_1/4/">Hochwertige Bildung</a>
@@ -6500,7 +6529,7 @@ data-event-label="high"
   </div> <!--class="goal"--><div class="goal reporting-status-item">
     <div>
         <a href="/dns-indicators_1/5/">
-        <img src="https://open-sdg.org/sdg-translations/assets/img/goals/de/5.png" alt="Geschlechtergleichheit - Ziel 5" width="150" height="150" class="goal-icon-5 goal-icon-image goal-icon-image-"/>
+        <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/dns/de/5.png" alt="Geschlechtergleichheit - Ziel 5" width="150" height="150" class="goal-icon-5 goal-icon-image goal-icon-image-"/>
         </a>
         <!-- <h3 class="status-goal">
             <a href="/dns-indicators_1/5/">Geschlechtergleichheit</a>
@@ -8155,7 +8184,7 @@ data-event-label="high"
   </div> <!--class="goal"--><div class="goal reporting-status-item">
     <div>
         <a href="/dns-indicators_1/6/">
-        <img src="https://open-sdg.org/sdg-translations/assets/img/goals/de/6.png" alt="Sauberes Wasser und Sanitäreinrichtungen - Ziel 6" width="150" height="150" class="goal-icon-6 goal-icon-image goal-icon-image-"/>
+        <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/dns/de/6.png" alt="Sauberes Wasser und Sanitäreinrichtungen - Ziel 6" width="150" height="150" class="goal-icon-6 goal-icon-image goal-icon-image-"/>
         </a>
         <!-- <h3 class="status-goal">
             <a href="/dns-indicators_1/6/">Sauberes Wasser und Sanitäreinrichtungen</a>
@@ -9563,7 +9592,7 @@ data-event-label="high"
   </div> <!--class="goal"--><div class="goal reporting-status-item">
     <div>
         <a href="/dns-indicators_1/7/">
-        <img src="https://open-sdg.org/sdg-translations/assets/img/goals/de/7.png" alt="Bezahlbare und saubere Energie - Ziel 7" width="150" height="150" class="goal-icon-7 goal-icon-image goal-icon-image-"/>
+        <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/dns/de/7.png" alt="Bezahlbare und saubere Energie - Ziel 7" width="150" height="150" class="goal-icon-7 goal-icon-image goal-icon-image-"/>
         </a>
         <!-- <h3 class="status-goal">
             <a href="/dns-indicators_1/7/">Bezahlbare und saubere Energie</a>
@@ -12434,7 +12463,7 @@ data-event-label="high"
   </div> <!--class="goal"--><div class="goal reporting-status-item">
     <div>
         <a href="/dns-indicators_1/8/">
-        <img src="https://open-sdg.org/sdg-translations/assets/img/goals/de/8.png" alt="Menschenwürdige Arbeit und Wirtschaftswachstum - Ziel 8" width="150" height="150" class="goal-icon-8 goal-icon-image goal-icon-image-"/>
+        <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/dns/de/8.png" alt="Menschenwürdige Arbeit und Wirtschaftswachstum - Ziel 8" width="150" height="150" class="goal-icon-8 goal-icon-image goal-icon-image-"/>
         </a>
         <!-- <h3 class="status-goal">
             <a href="/dns-indicators_1/8/">Menschenwürdige Arbeit und Wirtschaftswachstum</a>
@@ -15288,7 +15317,7 @@ data-event-label="high"
   </div> <!--class="goal"--><div class="goal reporting-status-item">
     <div>
         <a href="/dns-indicators_1/9/">
-        <img src="https://open-sdg.org/sdg-translations/assets/img/goals/de/9.png" alt="Industrie, Innovationen und Infrastruktur - Ziel 9" width="150" height="150" class="goal-icon-9 goal-icon-image goal-icon-image-"/>
+        <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/dns/de/9.png" alt="Industrie, Innovationen und Infrastruktur - Ziel 9" width="150" height="150" class="goal-icon-9 goal-icon-image goal-icon-image-"/>
         </a>
         <!-- <h3 class="status-goal">
             <a href="/dns-indicators_1/9/">Industrie, Innovationen und Infrastruktur</a>
@@ -16018,7 +16047,7 @@ data-event-label="high"
   </div> <!--class="goal"--><div class="goal reporting-status-item">
     <div>
         <a href="/dns-indicators_1/10/">
-        <img src="https://open-sdg.org/sdg-translations/assets/img/goals/de/10.png" alt="Weniger Ungleichheiten - Ziel 10" width="150" height="150" class="goal-icon-10 goal-icon-image goal-icon-image-"/>
+        <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/dns/de/10.png" alt="Weniger Ungleichheiten - Ziel 10" width="150" height="150" class="goal-icon-10 goal-icon-image goal-icon-image-"/>
         </a>
         <!-- <h3 class="status-goal">
             <a href="/dns-indicators_1/10/">Weniger Ungleichheiten</a>
@@ -16979,7 +17008,7 @@ data-event-label="high"
   </div> <!--class="goal"--><div class="goal reporting-status-item">
     <div>
         <a href="/dns-indicators_1/11/">
-        <img src="https://open-sdg.org/sdg-translations/assets/img/goals/de/11.png" alt="Nachhaltige Städte und Gemeinden - Ziel 11" width="150" height="150" class="goal-icon-11 goal-icon-image goal-icon-image-"/>
+        <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/dns/de/11.png" alt="Nachhaltige Städte und Gemeinden - Ziel 11" width="150" height="150" class="goal-icon-11 goal-icon-image goal-icon-image-"/>
         </a>
         <!-- <h3 class="status-goal">
             <a href="/dns-indicators_1/11/">Nachhaltige Städte und Gemeinden</a>
@@ -19488,7 +19517,7 @@ data-event-label="high"
   </div> <!--class="goal"--><div class="goal reporting-status-item">
     <div>
         <a href="/dns-indicators_1/12/">
-        <img src="https://open-sdg.org/sdg-translations/assets/img/goals/de/12.png" alt="Nachhaltige/r Konsum und Produktion - Ziel 12" width="150" height="150" class="goal-icon-12 goal-icon-image goal-icon-image-"/>
+        <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/dns/de/12.png" alt="Nachhaltige/r Konsum und Produktion - Ziel 12" width="150" height="150" class="goal-icon-12 goal-icon-image goal-icon-image-"/>
         </a>
         <!-- <h3 class="status-goal">
             <a href="/dns-indicators_1/12/">Nachhaltige/r Konsum und Produktion</a>
@@ -21635,7 +21664,7 @@ data-event-label="high"
   </div> <!--class="goal"--><div class="goal reporting-status-item">
     <div>
         <a href="/dns-indicators_1/13/">
-        <img src="https://open-sdg.org/sdg-translations/assets/img/goals/de/13.png" alt="Maßnahmen zum Klimaschutz - Ziel 13" width="150" height="150" class="goal-icon-13 goal-icon-image goal-icon-image-"/>
+        <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/dns/de/13.png" alt="Maßnahmen zum Klimaschutz - Ziel 13" width="150" height="150" class="goal-icon-13 goal-icon-image goal-icon-image-"/>
         </a>
         <!-- <h3 class="status-goal">
             <a href="/dns-indicators_1/13/">Maßnahmen zum Klimaschutz</a>
@@ -23471,7 +23500,7 @@ data-event-label="high"
   </div> <!--class="goal"--><div class="goal reporting-status-item">
     <div>
         <a href="/dns-indicators_1/14/">
-        <img src="https://open-sdg.org/sdg-translations/assets/img/goals/de/14.png" alt="Leben unter Wasser - Ziel 14" width="150" height="150" class="goal-icon-14 goal-icon-image goal-icon-image-"/>
+        <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/dns/de/14.png" alt="Leben unter Wasser - Ziel 14" width="150" height="150" class="goal-icon-14 goal-icon-image goal-icon-image-"/>
         </a>
         <!-- <h3 class="status-goal">
             <a href="/dns-indicators_1/14/">Leben unter Wasser</a>
@@ -24424,7 +24453,7 @@ data-event-label="high"
   </div> <!--class="goal"--><div class="goal reporting-status-item">
     <div>
         <a href="/dns-indicators_1/15/">
-        <img src="https://open-sdg.org/sdg-translations/assets/img/goals/de/15.png" alt="Leben an Land - Ziel 15" width="150" height="150" class="goal-icon-15 goal-icon-image goal-icon-image-"/>
+        <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/dns/de/15.png" alt="Leben an Land - Ziel 15" width="150" height="150" class="goal-icon-15 goal-icon-image goal-icon-image-"/>
         </a>
         <!-- <h3 class="status-goal">
             <a href="/dns-indicators_1/15/">Leben an Land</a>
@@ -25696,7 +25725,7 @@ data-event-label="high"
   </div> <!--class="goal"--><div class="goal reporting-status-item">
     <div>
         <a href="/dns-indicators_1/16/">
-        <img src="https://open-sdg.org/sdg-translations/assets/img/goals/de/16.png" alt="Frieden, Gerechtigkeit und starke Institutionen - Ziel 16" width="150" height="150" class="goal-icon-16 goal-icon-image goal-icon-image-"/>
+        <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/dns/de/16.png" alt="Frieden, Gerechtigkeit und starke Institutionen - Ziel 16" width="150" height="150" class="goal-icon-16 goal-icon-image goal-icon-image-"/>
         </a>
         <!-- <h3 class="status-goal">
             <a href="/dns-indicators_1/16/">Frieden, Gerechtigkeit und starke Institutionen</a>
@@ -27122,7 +27151,7 @@ data-event-label="high"
   </div> <!--class="goal"--><div class="goal reporting-status-item">
     <div>
         <a href="/dns-indicators_1/17/">
-        <img src="https://open-sdg.org/sdg-translations/assets/img/goals/de/17.png" alt="Partnerschaften zur Erreichung der Ziele - Ziel 17" width="150" height="150" class="goal-icon-17 goal-icon-image goal-icon-image-"/>
+        <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/dns/de/17.png" alt="Partnerschaften zur Erreichung der Ziele - Ziel 17" width="150" height="150" class="goal-icon-17 goal-icon-image goal-icon-image-"/>
         </a>
         <!-- <h3 class="status-goal">
             <a href="/dns-indicators_1/17/">Partnerschaften zur Erreichung der Ziele</a>
@@ -28267,33 +28296,18 @@ data-event-label="high"
                         </li>
                         
                         <li>
-                              <a href="/dns-indicators_1/contact-us ">Kontakt</a>
-                              
-                          </li>
-                        <li>
                               
                                 
-                                  <a href="https://twitter.com/MyTwitterAccount"><i class="fa fa-twitter" aria-hidden="true"></i>@destatis</a></a>
+                                  <a href="mailto:dns-indikatoren@destatis.de">Kontakt</a>
                                 
                               
                           </li>
                         <li>
-                              
-                                
-                                  <a href="https://facebook.com/MyFacebookAccount">general.facebook</a>
-                                
-                              
-                          </li>
-                        <li>
-                              <a href="/dns-indicators_1/about/cookies-and-privacy/ ">Cookies</a>
+                              <a href="/dns-indicators_1/imprint/ ">Im­pres­s­um</a>
                               
                           </li>
                         
                         
-                        
-                        <li>
-                            <a href="/dns-indicators_1/config">Configuration</a>
-                        </li>
                         </ul>
                 </div>
             </div>
@@ -28328,12 +28342,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/dns-indicators_1/assets/js/sdg.js?v=20240819065211'></script>
+<script src='/dns-indicators_1/assets/js/sdg.js?v=20240819070405'></script>
 
 
     
     
-    <script src="/dns-indicators_1/assets/js/custom.js?v=20240819065211"></script><script>
+    <script src="/dns-indicators_1/assets/js/custom.js?v=20240819070405"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

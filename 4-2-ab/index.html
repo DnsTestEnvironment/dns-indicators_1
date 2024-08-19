@@ -40,7 +40,7 @@ var opensdg = {
   },
 
   // Disaggregations which should be ignored on indicator pages.
-  ignoredDisaggregations: [],
+  ignoredDisaggregations: null,
 
   language: 'de',
 
@@ -121,7 +121,7 @@ var translations = {
         
         Indikator 4.2.ab -
         
-        Ganztagsbetreuung für Kinder - general.site_title
+        Ganztagsbetreuung für Kinder - Indikatoren der Deutschen Nachhaltigkeitsstrategie
     </title>
 
 
@@ -140,13 +140,15 @@ var translations = {
 <link rel="icon" type="image/x-icon" href="/dns-indicators_1/assets/img/favicons/favicon.ico" />
 
         
+        <link rel="manifest" href="/dns-indicators_1/manifest.json">
+        
 
         
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/dns-indicators_1/assets/css/style.css?v=20240819065211">
+        <link rel="stylesheet" href="/dns-indicators_1/assets/css/style.css?v=20240819070405">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -183,9 +185,9 @@ layout-indicator
     
 <div class="container">
   <div class="disclaimer-alert">
-    <strong class="phase-tag">Alpha-Version</strong>
+    <strong class="phase-tag">beta</strong>
     
-    Diese Seite befindet sich im Entwicklungsstadium. Wir freuen uns über Ihre <a href="mailto:test@example.com">Kommentare</a>.
+    Diese Seite befindet sich im Entwicklungsstadium. Wir freuen uns über Ihre <a href="mailto:dns-indikatoren@destatis.de">Kommentare</a>.
     
   </div>
 </div>
@@ -196,7 +198,7 @@ layout-indicator
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light flex-wrap align-items-start">
             <a class="navbar-brand" href="/dns-indicators_1/" id="home" aria-label="" title="">
-    <img src="/dns-indicators_1/assets/img/SDG_logo.png" alt="Ziele für Nachhaltige Entwicklung - " />
+    <img src="/dns-indicators_1/assets/img/de/DNS_logo.png" alt="DESTATIS - Deutsche Nachhaltikeitsstrategie" />
 </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="">
                 <span class="navbar-toggler-icon"></span>
@@ -206,22 +208,52 @@ layout-indicator
                     <ul class="navbar-nav" id="menu"><li class="nav-item ">
     <a class="nav-link" href="/dns-indicators_1/">Start</a>
 </li>
-<li class="nav-item ">
-    <a class="nav-link" href="/dns-indicators_1/goals">Ziele</a>
+<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-status" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Status
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdown-menu-1-status"><li class=" ">
+    <a class="dropdown-item" href="/dns-indicators_1/status/">Methodik</a>
 </li>
-<li class="nav-item ">
-    <a class="nav-link" href="/dns-indicators_1/reporting-status">Berichtsstatus</a>
-</li>
-<li class="nav-item ">
-    <a class="nav-link" href="/dns-indicators_1/news">menu.updates</a>
-</li>
-<li class="nav-item ">
-    <a class="nav-link" href="/dns-indicators_1/faq">menu.faq</a>
-</li>
-<li class="nav-item ">
-    <a class="nav-link" href="/dns-indicators_1/about">Über uns</a>
+<li class=" ">
+    <a class="dropdown-item" href="/dns-indicators_1/status_summary/">Übersicht</a>
 </li>
 </ul>
+          </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-strategy" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Strategie
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdown-menu-1-strategy"><li class=" ">
+    <a class="dropdown-item" href="/dns-indicators_1/strategy/dns/">Deutsche Nachhaltigkeitsstrategie</a>
+</li>
+<li class=" ">
+    <a class="dropdown-item" href="/dns-indicators_1/strategy/monitoring/">Monitoring</a>
+</li>
+<li class=" ">
+    <a class="dropdown-item" href="/dns-indicators_1/strategy/publications/">Publikationen</a>
+</li>
+<li class=" ">
+    <a class="dropdown-item" href="/dns-indicators_1/strategy/links/">Links</a>
+</li>
+</ul>
+          </li><li class="nav-item ">
+    <a class="nav-link" href="/dns-indicators_1/laender/">Bundesländer</a>
+</li>
+<li class="nav-item ">
+    <a class="nav-link" href="https://sdg-indikatoren.de">Globale Indikatoren <img class="link_btn" src="https://sdg-indikatoren.de/public/SDG Wheel_Transparent.png" title="Klicken Sie hier um zur Seite der SDG Indikatoren zu gelangen" alt="Link SDG" style="width:24px;height:24px;"/></a>
+</li>
+<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-help" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Hilfe
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdown-menu-1-help"><li class=" ">
+    <a class="dropdown-item" href="/dns-indicators_1/help/navigation/">Aufbau der Online Plattform</a>
+</li>
+<li class=" ">
+    <a class="dropdown-item" href="/dns-indicators_1/help/guidance/">Technische Hinweise</a>
+</li>
+<li class=" ">
+    <a class="dropdown-item" href="/dns-indicators_1/help/faq/">FAQ</a>
+</li>
+</ul>
+          </li></ul>
 
                 </div>
                 <div class="header-search-bar">
@@ -244,19 +276,16 @@ layout-indicator
 
 
 
-  <div class="language-toggle-container">
-  
-  <div class="btn-group language-toggle-dropdown  dropdown">
-    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-      <i class="fa fa-globe"></i>
-      Deutsch
-    </button>
-    <ul class="dropdown-menu"><li>
-            <a class="dropdown-item" href="/dns-indicators_1/en/4-2-ab/">
-              English
+  <div class="language-toggle-container d-flex">
+    <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-de list-inline-item" style="opacity:0.3">
+            <span>
+                Deutsch
+            </span>
+        </li><li class="language-option-en list-inline-item">
+            <a class="language-toggle-link" href="/dns-indicators_1/en/4-2-ab/">
+                English
             </a>
-          </li></ul>
-  </div>
+        </li></ul>
 </div>
 
 
@@ -352,8 +381,6 @@ data-event-label="high"
 
 <script type="text/template" id="series_template">
   
-  <% if(serieses.length > 1) { %>
-  
     <h4>Zeitreihe</h4>
     <fieldset>
       <legend class="sr-only">Zeitreihe</legend>
@@ -363,8 +390,6 @@ data-event-label="high"
         <label><input type="radio" name="series" value="<%=seriesItem%>" tabindex=0 <%=checked ? 'checked' : ''%> /> <%=translations.t(seriesItem)%> <%=isProxy ? proxyPill : ''%></label>
       <% }); %>
     </fieldset>
-  
-  <% } %>
   
 </script>
 
@@ -379,7 +404,7 @@ data-event-label="high"
       
       <div class="col-4 col-md-3 col-lg-2 goal-icon goal-tiles">
         <a href="/dns-indicators_1/4/" aria-label=" 4" title="Zu den Indikatoren dieses Ziels">
-          <img src="https://open-sdg.org/sdg-translations/assets/img/goals/de/4.png"
+          <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/dns/de/4.png"
               alt="Hochwertige Bildung - Ziel 4"
               id="goal-4"
               class="goal-icon-image goal-icon-image-" />
@@ -406,17 +431,14 @@ data-event-label="high"
 <nav>
     <ol aria-label="breadcrumb" class="breadcrumb" style="--bs-breadcrumb-divider: '&rsaquo;';">
         
-          <li class="breadcrumb-item">
+            <li class="breadcrumb-item">
                 <a href="/dns-indicators_1/">Start</a>
             </li>
-          <li class="breadcrumb-item">
-                <a href="/dns-indicators_1/goals">Ziele</a>
+            <li class="breadcrumb-item">
+                <a href="/dns-indicators_1/4/" title="Inklusive, gleichberechtigte und hochwertige Bildung gewährleisten und Möglichkeiten lebenslangen Lernens für alle fördern">Ziel 4</a>
             </li>
-          
-          <li class="breadcrumb-item">
-              <a href="/dns-indicators_1/4/" title="Inklusive, gleichberechtigte und hochwertige Bildung gewährleisten und Möglichkeiten lebenslangen Lernens für alle fördern">Ziel 4</a>
-          </li>
-          
+            <li class="breadcrumb-item active">Indikator 4.2.a, b</li>
+        
     </ol>
 </nav>
 
@@ -1958,9 +1980,9 @@ data-event-label="Change to embedded item tab"
                 data-on="click"
 data-event-category="Tab change"
 data-event-action="Change metadata view"
-data-event-label="Change to indicator.national_metadata tab"
+data-event-label="Change to indicator.details tab"
 
-            >Nationale Metadaten</button>
+            >Details</button>
         </li>
     
         
@@ -1972,16 +1994,37 @@ data-event-label="Change to indicator.national_metadata tab"
                 type="button"
                 class="nav-link "
                 data-bs-toggle="tab"
-                id="tab-global"
-                data-bs-target="#global"
-                aria-controls="global"
+                id="tab-content"
+                data-bs-target="#content"
+                aria-controls="content"
                 role="tab"
                 data-on="click"
 data-event-category="Tab change"
 data-event-action="Change metadata view"
-data-event-label="Change to indicator.global_metadata tab"
+data-event-label="Change to indicator.contentAndProgress tab"
 
-            >Globale Metadaten</button>
+            >Inhalt und Entwicklung</button>
+        </li>
+    
+        
+        
+        
+        
+        <li role="presentation" class="nav-item">
+            <button
+                type="button"
+                class="nav-link "
+                data-bs-toggle="tab"
+                id="tab-history_1"
+                data-bs-target="#history_1"
+                aria-controls="history_1"
+                role="tab"
+                data-on="click"
+data-event-category="Tab change"
+data-event-action="Change metadata view"
+data-event-label="Change to indicator.history tab"
+
+            >Statusübersicht</button>
         </li>
     
         
@@ -2022,7 +2065,7 @@ data-event-label="Change to indicator.sources tab"
     
     <div role="tabpanel" class="tab-pane active" id="national">
       <article>
-        <p>Die für den jeweiligen SDG-Indikator zuständigen internationalen Organisationen (Custodian Agencies) veröffentlichen methodische Vorgaben zur Berechnung des Indikators - die sogenannten globalen Metadaten.<br /><br />Hier werden die am besten dazu geeigneten, national verfügbaren Zeitreihen bereitgestellt und ihre Vergleichbarkeit mit den globalen Metadaten ausgewiesen. Zugehörige methodische und länderspezifische Informationen dieser Zeitreihen finden Sie im nationalen Metadatenblatt.</p>
+        <p>Diese Übersicht beinhaltet zusätzliche Informationen zu den oben dargestellten Indikatoren, wie eine kurze Definition des Indikators und eine Beschreibung des politisch festgelegten Zielwertes sowie die politische Intention für die Auswahl des Indikators.</p>
 
         
 <table class="table" style="width:100%; table-layout: fixed;">
@@ -2962,10 +3005,9 @@ data-event-label="Change to indicator.sources tab"
     
     
     
-    <div role="tabpanel" class="tab-pane " id="global">
+    <div role="tabpanel" class="tab-pane " id="content">
       <article>
-        <p>Diese Übersicht stellt Informationen zu den globalen Metadaten des jeweiligen SDG-Indikators bereit. Die <a href="https://unstats.un.org/sdgs/metadata/">globalen Metadaten</a> werden durch die Statistische Division der Vereinten Nationen bereitgestellt.</p>
-
+        
         
 <table class="table" style="width:100%; table-layout: fixed;">
   
@@ -2973,11 +3015,18 @@ data-event-label="Change to indicator.sources tab"
   
   
   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
       
         
-          
-      
-        
       
 
       
@@ -2985,16 +3034,9 @@ data-event-label="Change to indicator.sources tab"
 
 
       
-        
-          <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Indikatorenbezeichnung </th>
-            <td>
-              
-                <p>Ganztagsbetreuung für Kinder</p>
-
-              
-            </td>
-          </tr>
+         <!-- case: content -->
+          <p> <p><b>Text aus dem <a href="https://dns-indikatoren.de/assets/Publikationen/Indikatorenberichte/2022.pdf">Indikatorenbericht 2022 </a></b><br /><br />Die Indikatoren geben jeweils den Anteil der Kinder an, für die eine tägliche Betreuungszeit von mehr als sieben Stunden vereinbart wurde. Diese Zeitangabe kann von der tatsächlich in Anspruch genommenen Betreuungsdauer abweichen. Vertraglich vereinbarte Betreuungszeiten von sieben Stunden und weniger, die ebenfalls die Vereinbarkeit von Beruf und Familie verbessern können, sowie weitere Betreuungsformen, zum Beispiel Tagespflege, fließen nicht ein. Darüber hinaus sind für das Themengebiet auch Informationen zu Betreuungsangeboten für Kinder ab sechs Jahren relevant. Entsprechende ergänzende Informationen bieten beispielsweise Daten der Kultusministerkonferenz (siehe letzter Abschnitt).<br /><br />Die Angaben zum Indikator stammen aus der jährlichen Statistik über Kinder und tätige Personen in Kindertageseinrichtungen des Statistischen Bundesamtes. Im Jahr 2022 war für 16,8 % der unter 3-Jährigen (Krippenalter) und für 47,0 % der 3- bis 5-Jährigen (Kindergartenalter) eine Ganztagsbetreuung in Kindertageseinrichtungen vereinbart. Somit haben sich die Anteile der ganztags betreuten Kinder unter 3 Jahren seit 2006 fast verdreifacht und unter den 3- bis 5-Jährigen mehr als verdoppelt. Bei beiden Altersgruppen ist der Anstieg allerdings seit etwa 2014 deutlich schwächer ausgeprägt als in den Jahren zuvor, seit 2020 sind die Anteile sogar leicht rückläufig.<br /><br />Die absolute Zahl der ganztags in Kindertageseinrichtungen betreuten Kinder unter 6 Jahren lag 2022 bei 1,61 Millionen. Weitere 67 416 Kinder im Alter von unter 6 Jahren wurden ganztägig in öffentlich geförderter Tagespflege betreut und werden somit, wie auch die 5-jährigen Kinder, die bereits zur Schule gehen, nicht vom Indikator erfasst. Darüber hinaus waren 2022 rund 1,46 Millionen Kinder mit einer Betreuungszeit von bis zu sieben Stunden in Teilzeitbetreuung.<br /><br />In beiden Altersklassen war die Anzahl an Kindern in der Bevölkerung insgesamt bis 2014 stagnierend bis rückläufig, hat aber als Folge des vermehrten Zuzugs Geflüchteter ab 2015 stark zugenommen. Diese deutlichen Zuwächse spiegeln sich jedoch nicht in der Anzahl der betreuten Kinder wider, die in beiden Altersklassen einen (über 2015 hinweg, bis zur Corona-Pandemie) konstanten Verlauf verzeichnet, was zu dem abgeschwächten Anstieg der Indikatoren geführt hat.<br /><br />Mehr als ein Viertel der 2020 in Kindertageseinrichtungen und in öffentlich geförderter Tagespflege betreuten Kinder unter 6 Jahren hatte einen Migrationshintergrund, das heißt, mindestens ein Elternteil war ausländischer Herkunft. Die Betreuungsquote betrug hier 51 %, bei Kindern ohne Migrationshintergrund lag sie bei 71 %.<br /><br />Bei der Ganztagsbetreuung in Tageseinrichtungen besteht ein deutliches Gefälle zwischen den alten und neuen Bundesländern. Die höchsten Ganztagsquoten für 0- bis 2-Jährige sind in den neuen Bundesländern sowie in Berlin zu verzeichnen. Die Spanne bewegt sich insgesamt zwischen 50,7 % in Thüringen und 9,5 % in Baden-Württemberg. Bei den 3- bis 5-Jährigen weisen ebenfalls Thüringen mit 91,6 % die höchste und Baden-Württemberg mit 24,1 % die niedrigste Betreuungsquote auf (jeweils 2022).<br /><br />Im Hinblick auf die Betreuungsmöglichkeiten für Schulkinder spielen auch Horte und Ganztagsschulen eine wichtige Rolle. 2021 wurden in Kindertageseinrichtungen (Horten) 18 967 Kinder von 5 bis 13 Jahren ganztags und 486 408 Kinder in Teilzeit betreut (die Unterrichtszeit gilt nicht als Betreuungszeit). Der Anteil der Ganztagsschülerinnen und Ganztagsschüler gemessen an allen Schülerinnen und Schülern an allgemeinbildenden Schulen lag im Schuljahr 2020/2021 bei 47,2 %. Hier sind jedoch alle Schulformen und somit auch Schülerinnen und Schüler über 13 Jahren einbezogen. An Grundschulen wurden im gleichen Schuljahr 46,5 % der Kinder ganztags betreut. Im Vergleich zum Jahr 2006 ist die Zahl der Ganztagsschülerinnen und Ganztagsschüler 2021 deutlich gestiegen, und zwar von knapp 1,5 Millionen auf 3,4 Millionen (allgemeinbildende Schulen insgesamt) und von 0,4 Millionen auf 1,3 Millionen an Grundschulen.</p>
+ </p>
         
       
 
@@ -3003,56 +3045,6 @@ data-event-label="Change to indicator.sources tab"
 
       
     
-  
-      
-        
-          
-      
-        
-          
-      
-        
-      
-
-      
-      
-
-
-      
-        
-          <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Unterzielnummerierung </th>
-            <td>
-              
-                <p>4.2.1</p>
-
-              
-            </td>
-          </tr>
-        
-      
-
-      <!-- weather -->
-      
-
-      
-    
-  
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
   
   
   
@@ -3847,6 +3839,3777 @@ data-event-label="Change to indicator.sources tab"
   
   
 </table>
+
+      </article>
+    </div>
+    
+    
+    
+    
+    
+    <div role="tabpanel" class="tab-pane " id="history_1">
+      <article>
+        <p>In dieser Übersichtstabelle sind die Bewertungen des Indikators nach Stand der vorhergehenden Jahre dargestellt. Daran lässt sich ablesen, ob das Wettersymbol für einen Indikator in den vergangenen Jahren stabil oder eher volatil war. <b>(Bewertungen aus dem <a href="https://dns-indikatoren.de/publications_reports/">Indikatorenbericht 2022 </a>)</b></p>
+
+        <!-- Count the non-empty histories (up to 2) -->
+
+
+
+
+  <div class="row">
+    
+    
+
+      
+
+      
+
+        
+        
+        <div class="col-md-6">
+          <!-- 
+            <h4>Zeitreihe 1</h4>
+           -->
+          
+<table class="table" style="width:100%; table-layout: fixed;">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+           <!-- leaves only weather_indicator_1_target-->
+            <tr id="indAndtarg">
+              <th scope="row" style="padding-right: 10px; text-align: left; width: 130px;">Indikator </th>
+              <td colspan="4">
+                <p>4.2.a Ganztagsbetreuung für Kinder <br />0- bis 2-Jährige</p>
+
+              </td>
+            </tr>
+          
+        
+      
+
+      
+    
+  
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+           <!-- leaves only weather_indicator_1_target-->
+            <tr id="indAndtarg">
+              <th scope="row" style="padding-right: 10px; text-align: left; width: 130px;">Ziel </th>
+              <td colspan="4">
+                <p>Anstieg auf 35 % bis 2030</p>
+
+              </td>
+            </tr>
+          
+        
+      
+
+      
+    
+  
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+      
+
+      
+        
+        
+        
+        
+        
+
+        
+        
+        
+        <tr id="years">
+          <th scope="row" style="padding-right: 10px; text-align: left; width: 130px;">Jahr </th>
+          
+            <td align="left" style="margin-bottom: 15px;">
+              <p><p>2019</p>
+</p>
+            </td>
+          
+          
+            <td align="left" style="margin-bottom: 15px;">
+              <p><p>2020</p>
+</p>
+            </td>
+          
+          
+            <td align="left" style="margin-bottom: 15px;">
+              <p><p>2021</p>
+</p>
+            </td>
+          
+          
+            <td align="left" style="margin-bottom: 15px;">
+              <p><p>2022</p>
+</p>
+            </td>
+          
+        </tr>
+      
+    
+  
+      
+        
+          
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+      
+
+      
+    
+  
+      
+        
+          
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+      
+
+      
+    
+  
+      
+        
+          
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+      
+
+      
+    
+  
+      
+        
+          
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+      
+
+      
+    
+  
+      
+        
+          
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+      
+
+      
+    
+  
+      
+        
+          
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+      
+
+      
+    
+  
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+          
+        
+      
+
+      
+    
+  
+      
+        
+          
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+          
+        
+      
+
+       <!--weather_indicator_1_target_1_item_a-->
+        
+          
+          
+          
+          
+
+          
+             <!--weather_indicator_(1...3)_target_(1...4)_category-->
+            
+            
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+            
+          
+             <!--weather_indicator_(1...3)_target_(1...4)_category-->
+            
+            
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+            
+          
+             <!--weather_indicator_(1...3)_target_(1...4)_category-->
+            
+            
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+            
+          
+             <!--weather_indicator_(1...3)_target_(1...4)_category-->
+            
+            
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+            
+          
+             <!--weather_indicator_(1...3)_target_(1...4)_category-->
+            
+            
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+            
+          
+             <!--weather_indicator_(1...3)_target_(1...4)_category-->
+            
+            
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+            
+          
+             <!--weather_indicator_(1...3)_target_(1...4)_category-->
+            
+            
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+            
+          
+             <!--weather_indicator_(1...3)_target_(1...4)_category-->
+            
+            
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+            
+          
+          
+
+
+
+          <tr id="items">
+            <th scope="row" style="padding-right: 10px; text-align: left; width: 130px;">Bewertung </th>
+            
+              <td align="left" style="padding-left: 0px;padding-right: 0px; width: auto">
+                <a href=" /dns-indicators_1/status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/Wolke.png" title="Der Indikator entwickelte sich in 2019 zwar in die gewünschte Richtung auf das Ziel zu, bei Fortsetzung der Entwicklung wäre das Ziel im Zieljahr aber um mehr als 20 % der Differenz zwischen Zielwert und dem Wert aus 2019 verfehlt worden." alt="<p>Wolke</p>
+" class="responsiveWeather" style="border: transparent"/></a>
+              </td>
+            
+
+            
+              <td align="left" style="padding-left: 0px;padding-right: 0px; width: auto">
+                <a href=" /dns-indicators_1/status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/Wolke.png" title="Der Indikator entwickelte sich in 2020 zwar in die gewünschte Richtung auf das Ziel zu, bei Fortsetzung der Entwicklung wäre das Ziel im Zieljahr aber um mehr als 20 % der Differenz zwischen Zielwert und dem Wert aus 2020 verfehlt worden." alt="<p>Wolke</p>
+" class="responsiveWeather" style="border: transparent"/></a>
+              </td>
+            
+
+            
+              <td align="left" style="padding-left: 0px;padding-right: 0px; width: auto">
+                <a href=" /dns-indicators_1/status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/Wolke.png" title="Der Indikator entwickelte sich in 2021 zwar in die gewünschte Richtung auf das Ziel zu, bei Fortsetzung der Entwicklung wäre das Ziel im Zieljahr aber um mehr als 20 % der Differenz zwischen Zielwert und dem Wert aus 2021 verfehlt worden." alt="<p>Wolke</p>
+" class="responsiveWeather" style="border: transparent"/></a>
+              </td>
+            
+
+            
+              <td align="left" style="padding-left: 0px;padding-right: 0px; width: auto">
+                <a href=" /dns-indicators_1/status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/Wolke.png" title="Der Indikator entwickelte sich in 2022 zwar in die gewünschte Richtung auf das Ziel zu, bei Fortsetzung der Entwicklung wäre das Ziel im Zieljahr aber um mehr als 20 % der Differenz zwischen Zielwert und dem Wert aus 2022 verfehlt worden." alt="<p>Wolke</p>
+" class="responsiveWeather" style="border: transparent"/></a>
+              </td>
+            
+          </tr>
+
+
+
+        
+      
+    
+  
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+          
+        
+      
+
+      
+    
+  
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+          
+        
+      
+
+      
+    
+  
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+          
+        
+      
+
+      
+    
+  
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+          
+        
+      
+
+      
+    
+  
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+          
+        
+      
+
+      
+    
+  
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+          
+        
+      
+
+      
+    
+  
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</table>
+
+        </div>
+      
+    
+
+      
+
+      
+
+        
+        
+        <div class="col-md-6">
+          <!-- 
+            <h4>Zeitreihe 2</h4>
+           -->
+          
+<table class="table" style="width:100%; table-layout: fixed;">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+           <!-- leaves only weather_indicator_1_target-->
+            <tr id="indAndtarg">
+              <th scope="row" style="padding-right: 10px; text-align: left; width: 130px;">Indikator </th>
+              <td colspan="4">
+                <p>4.2.b Ganztagsbetreuung für Kinder <br />3- bis 5-Jährige</p>
+
+              </td>
+            </tr>
+          
+        
+      
+
+      
+    
+  
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+           <!-- leaves only weather_indicator_1_target-->
+            <tr id="indAndtarg">
+              <th scope="row" style="padding-right: 10px; text-align: left; width: 130px;">Ziel </th>
+              <td colspan="4">
+                <p>Anstieg auf 70 % bis 2030</p>
+
+              </td>
+            </tr>
+          
+        
+      
+
+      
+    
+  
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+      
+
+      
+        
+        
+        
+        
+        
+
+        
+        
+        
+        <tr id="years">
+          <th scope="row" style="padding-right: 10px; text-align: left; width: 130px;">Jahr </th>
+          
+          
+          
+            <td align="left" style="margin-bottom: 15px;">
+              <p><p>2021</p>
+</p>
+            </td>
+          
+          
+            <td align="left" style="margin-bottom: 15px;">
+              <p><p>2022</p>
+</p>
+            </td>
+          
+        </tr>
+      
+    
+  
+      
+        
+          
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+      
+
+      
+    
+  
+      
+        
+          
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+      
+
+      
+    
+  
+      
+        
+          
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+      
+
+      
+    
+  
+      
+        
+          
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+      
+
+      
+    
+  
+      
+        
+          
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+      
+
+      
+    
+  
+      
+        
+          
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+      
+
+      
+    
+  
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+          
+        
+      
+
+      
+    
+  
+      
+        
+          
+      
+        
+          
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+          
+        
+      
+
+       <!--weather_indicator_1_target_1_item_a-->
+        
+          
+          
+          
+          
+
+          
+             <!--weather_indicator_(1...3)_target_(1...4)_category-->
+            
+            
+          
+             <!--weather_indicator_(1...3)_target_(1...4)_category-->
+            
+            
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+            
+          
+             <!--weather_indicator_(1...3)_target_(1...4)_category-->
+            
+            
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+            
+          
+             <!--weather_indicator_(1...3)_target_(1...4)_category-->
+            
+            
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+            
+          
+             <!--weather_indicator_(1...3)_target_(1...4)_category-->
+            
+            
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+            
+          
+             <!--weather_indicator_(1...3)_target_(1...4)_category-->
+            
+            
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+            
+          
+             <!--weather_indicator_(1...3)_target_(1...4)_category-->
+            
+            
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+            
+          
+             <!--weather_indicator_(1...3)_target_(1...4)_category-->
+            
+            
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+            
+          
+          
+
+
+
+          <tr id="items">
+            <th scope="row" style="padding-right: 10px; text-align: left; width: 130px;">Bewertung </th>
+            
+              <td colspan="1" align="left" style="padding-left: 0px;padding-right: 0px; width: auto">
+              </td>
+            
+
+            
+              <td colspan="1" align="left" style="padding-left: 0px;padding-right: 0px; width: auto">
+              </td>
+            
+
+            
+              <td align="left" style="padding-left: 0px;padding-right: 0px; width: auto">
+                <a href=" /dns-indicators_1/status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/Wolke.png" title="Der Indikator entwickelte sich in 2021 zwar in die gewünschte Richtung auf das Ziel zu, bei Fortsetzung der Entwicklung wäre das Ziel im Zieljahr aber um mehr als 20 % der Differenz zwischen Zielwert und dem Wert aus 2021 verfehlt worden." alt="<p>Wolke</p>
+" class="responsiveWeather" style="border: transparent"/></a>
+              </td>
+            
+
+            
+              <td align="left" style="padding-left: 0px;padding-right: 0px; width: auto">
+                <a href=" /dns-indicators_1/status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/Wolke.png" title="Der Indikator entwickelte sich in 2022 zwar in die gewünschte Richtung auf das Ziel zu, bei Fortsetzung der Entwicklung wäre das Ziel im Zieljahr aber um mehr als 20 % der Differenz zwischen Zielwert und dem Wert aus 2022 verfehlt worden." alt="<p>Wolke</p>
+" class="responsiveWeather" style="border: transparent"/></a>
+              </td>
+            
+          </tr>
+
+
+
+        
+      
+    
+  
+      
+        
+          
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+          
+        
+      
+
+      
+    
+  
+      
+        
+          
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+          
+        
+      
+
+      
+    
+  
+      
+        
+          
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+          
+        
+      
+
+      
+    
+  
+      
+        
+          
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+          
+        
+      
+
+      
+    
+  
+      
+        
+          
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+          
+        
+      
+
+      
+    
+  
+      
+        
+          
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+          
+        
+      
+
+      
+    
+  
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+          
+        
+      
+
+      
+    
+  
+      
+        
+          
+      
+        
+          
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+          
+        
+      
+
+      
+    
+  
+      
+        
+          
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+          
+        
+      
+
+      
+    
+  
+      
+        
+          
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+          
+        
+      
+
+      
+    
+  
+      
+        
+          
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+          
+        
+      
+
+      
+    
+  
+      
+        
+          
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+          
+        
+      
+
+      
+    
+  
+      
+        
+          
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+          
+        
+      
+
+      
+    
+  
+      
+        
+          
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+          
+        
+      
+
+      
+    
+  
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</table>
+
+        </div>
+      
+    
+  </div>
+
 
       </article>
     </div>
@@ -4891,15 +8654,13 @@ data-event-label="Change to indicator.sources tab"
   
 
 
-  <a class="btn btn-primary" href="data">Daten bearbeiten</a>
+  <a class="btn btn-primary" href="http://prose.io/#DnsTestEnvironment/dns-data/edit/develop/data/indicator_4-2-ab.csv">Daten bearbeiten</a>
   
 
   
-  <a class="btn btn-primary" href="metadata">Metadaten bearbeiten</a>
+  <a class="btn btn-primary" href="http://prose.io/#DnsTestEnvironment/dns-data/edit/develop/meta/4-2-ab.md">Metadaten bearbeiten</a>
   
 
-  
-  <a class="btn btn-primary" href="config"></a>
   
 
 </div>
@@ -4930,33 +8691,18 @@ data-event-label="Change to indicator.sources tab"
                         </li>
                         
                         <li>
-                              <a href="/dns-indicators_1/contact-us ">Kontakt</a>
-                              
-                          </li>
-                        <li>
                               
                                 
-                                  <a href="https://twitter.com/MyTwitterAccount"><i class="fa fa-twitter" aria-hidden="true"></i>@destatis</a></a>
+                                  <a href="mailto:dns-indikatoren@destatis.de">Kontakt</a>
                                 
                               
                           </li>
                         <li>
-                              
-                                
-                                  <a href="https://facebook.com/MyFacebookAccount">general.facebook</a>
-                                
-                              
-                          </li>
-                        <li>
-                              <a href="/dns-indicators_1/about/cookies-and-privacy/ ">Cookies</a>
+                              <a href="/dns-indicators_1/imprint/ ">Im­pres­s­um</a>
                               
                           </li>
                         
                         
-                        
-                        <li>
-                            <a href="/dns-indicators_1/config">Configuration</a>
-                        </li>
                         </ul>
                 </div>
             </div>
@@ -5002,12 +8748,12 @@ data-event-label="Change to indicator.sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/dns-indicators_1/assets/js/sdg.js?v=20240819065211'></script>
+<script src='/dns-indicators_1/assets/js/sdg.js?v=20240819070405'></script>
 
 
     
     
-    <script src="/dns-indicators_1/assets/js/custom.js?v=20240819065211"></script><script>
+    <script src="/dns-indicators_1/assets/js/custom.js?v=20240819070405"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

@@ -40,7 +40,7 @@ var opensdg = {
   },
 
   // Disaggregations which should be ignored on indicator pages.
-  ignoredDisaggregations: [],
+  ignoredDisaggregations: null,
 
   language: 'de',
 
@@ -121,7 +121,7 @@ var translations = {
         
         Indikator 11.4 -
         
-        Zahl der Objekte in der Deutschen Digitalen Bibliothek - general.site_title
+        Zahl der Objekte in der Deutschen Digitalen Bibliothek - Indikatoren der Deutschen Nachhaltigkeitsstrategie
     </title>
 
 
@@ -140,13 +140,15 @@ var translations = {
 <link rel="icon" type="image/x-icon" href="/dns-indicators_1/assets/img/favicons/favicon.ico" />
 
         
+        <link rel="manifest" href="/dns-indicators_1/manifest.json">
+        
 
         
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/dns-indicators_1/assets/css/style.css?v=20240819065211">
+        <link rel="stylesheet" href="/dns-indicators_1/assets/css/style.css?v=20240819070405">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -183,9 +185,9 @@ layout-indicator
     
 <div class="container">
   <div class="disclaimer-alert">
-    <strong class="phase-tag">Alpha-Version</strong>
+    <strong class="phase-tag">beta</strong>
     
-    Diese Seite befindet sich im Entwicklungsstadium. Wir freuen uns über Ihre <a href="mailto:test@example.com">Kommentare</a>.
+    Diese Seite befindet sich im Entwicklungsstadium. Wir freuen uns über Ihre <a href="mailto:dns-indikatoren@destatis.de">Kommentare</a>.
     
   </div>
 </div>
@@ -196,7 +198,7 @@ layout-indicator
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light flex-wrap align-items-start">
             <a class="navbar-brand" href="/dns-indicators_1/" id="home" aria-label="" title="">
-    <img src="/dns-indicators_1/assets/img/SDG_logo.png" alt="Ziele für Nachhaltige Entwicklung - " />
+    <img src="/dns-indicators_1/assets/img/de/DNS_logo.png" alt="DESTATIS - Deutsche Nachhaltikeitsstrategie" />
 </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="">
                 <span class="navbar-toggler-icon"></span>
@@ -206,22 +208,52 @@ layout-indicator
                     <ul class="navbar-nav" id="menu"><li class="nav-item ">
     <a class="nav-link" href="/dns-indicators_1/">Start</a>
 </li>
-<li class="nav-item ">
-    <a class="nav-link" href="/dns-indicators_1/goals">Ziele</a>
+<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-status" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Status
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdown-menu-1-status"><li class=" ">
+    <a class="dropdown-item" href="/dns-indicators_1/status/">Methodik</a>
 </li>
-<li class="nav-item ">
-    <a class="nav-link" href="/dns-indicators_1/reporting-status">Berichtsstatus</a>
-</li>
-<li class="nav-item ">
-    <a class="nav-link" href="/dns-indicators_1/news">menu.updates</a>
-</li>
-<li class="nav-item ">
-    <a class="nav-link" href="/dns-indicators_1/faq">menu.faq</a>
-</li>
-<li class="nav-item ">
-    <a class="nav-link" href="/dns-indicators_1/about">Über uns</a>
+<li class=" ">
+    <a class="dropdown-item" href="/dns-indicators_1/status_summary/">Übersicht</a>
 </li>
 </ul>
+          </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-strategy" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Strategie
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdown-menu-1-strategy"><li class=" ">
+    <a class="dropdown-item" href="/dns-indicators_1/strategy/dns/">Deutsche Nachhaltigkeitsstrategie</a>
+</li>
+<li class=" ">
+    <a class="dropdown-item" href="/dns-indicators_1/strategy/monitoring/">Monitoring</a>
+</li>
+<li class=" ">
+    <a class="dropdown-item" href="/dns-indicators_1/strategy/publications/">Publikationen</a>
+</li>
+<li class=" ">
+    <a class="dropdown-item" href="/dns-indicators_1/strategy/links/">Links</a>
+</li>
+</ul>
+          </li><li class="nav-item ">
+    <a class="nav-link" href="/dns-indicators_1/laender/">Bundesländer</a>
+</li>
+<li class="nav-item ">
+    <a class="nav-link" href="https://sdg-indikatoren.de">Globale Indikatoren <img class="link_btn" src="https://sdg-indikatoren.de/public/SDG Wheel_Transparent.png" title="Klicken Sie hier um zur Seite der SDG Indikatoren zu gelangen" alt="Link SDG" style="width:24px;height:24px;"/></a>
+</li>
+<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-help" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Hilfe
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdown-menu-1-help"><li class=" ">
+    <a class="dropdown-item" href="/dns-indicators_1/help/navigation/">Aufbau der Online Plattform</a>
+</li>
+<li class=" ">
+    <a class="dropdown-item" href="/dns-indicators_1/help/guidance/">Technische Hinweise</a>
+</li>
+<li class=" ">
+    <a class="dropdown-item" href="/dns-indicators_1/help/faq/">FAQ</a>
+</li>
+</ul>
+          </li></ul>
 
                 </div>
                 <div class="header-search-bar">
@@ -244,19 +276,16 @@ layout-indicator
 
 
 
-  <div class="language-toggle-container">
-  
-  <div class="btn-group language-toggle-dropdown  dropdown">
-    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-      <i class="fa fa-globe"></i>
-      Deutsch
-    </button>
-    <ul class="dropdown-menu"><li>
-            <a class="dropdown-item" href="/dns-indicators_1/en/11-4/">
-              English
+  <div class="language-toggle-container d-flex">
+    <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-de list-inline-item" style="opacity:0.3">
+            <span>
+                Deutsch
+            </span>
+        </li><li class="language-option-en list-inline-item">
+            <a class="language-toggle-link" href="/dns-indicators_1/en/11-4/">
+                English
             </a>
-          </li></ul>
-  </div>
+        </li></ul>
 </div>
 
 
@@ -352,8 +381,6 @@ data-event-label="high"
 
 <script type="text/template" id="series_template">
   
-  <% if(serieses.length > 1) { %>
-  
     <h4>Zeitreihe</h4>
     <fieldset>
       <legend class="sr-only">Zeitreihe</legend>
@@ -363,8 +390,6 @@ data-event-label="high"
         <label><input type="radio" name="series" value="<%=seriesItem%>" tabindex=0 <%=checked ? 'checked' : ''%> /> <%=translations.t(seriesItem)%> <%=isProxy ? proxyPill : ''%></label>
       <% }); %>
     </fieldset>
-  
-  <% } %>
   
 </script>
 
@@ -379,7 +404,7 @@ data-event-label="high"
       
       <div class="col-4 col-md-3 col-lg-2 goal-icon goal-tiles">
         <a href="/dns-indicators_1/11/" aria-label=" 11" title="Zu den Indikatoren dieses Ziels">
-          <img src="https://open-sdg.org/sdg-translations/assets/img/goals/de/11.png"
+          <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/dns/de/11.png"
               alt="Nachhaltige Städte und Gemeinden - Ziel 11"
               id="goal-11"
               class="goal-icon-image goal-icon-image-" />
@@ -406,17 +431,14 @@ data-event-label="high"
 <nav>
     <ol aria-label="breadcrumb" class="breadcrumb" style="--bs-breadcrumb-divider: '&rsaquo;';">
         
-          <li class="breadcrumb-item">
+            <li class="breadcrumb-item">
                 <a href="/dns-indicators_1/">Start</a>
             </li>
-          <li class="breadcrumb-item">
-                <a href="/dns-indicators_1/goals">Ziele</a>
+            <li class="breadcrumb-item">
+                <a href="/dns-indicators_1/11/" title="Städte und Siedlungen inklusiv, sicher, widerstandsfähig und nachhaltig gestalten">Ziel 11</a>
             </li>
-          
-          <li class="breadcrumb-item">
-              <a href="/dns-indicators_1/11/" title="Städte und Siedlungen inklusiv, sicher, widerstandsfähig und nachhaltig gestalten">Ziel 11</a>
-          </li>
-          
+            <li class="breadcrumb-item active">Indikator 11.4</li>
+        
     </ol>
 </nav>
 
@@ -1126,9 +1148,9 @@ data-event-label="Change to embedded item tab"
                 data-on="click"
 data-event-category="Tab change"
 data-event-action="Change metadata view"
-data-event-label="Change to indicator.national_metadata tab"
+data-event-label="Change to indicator.details tab"
 
-            >Nationale Metadaten</button>
+            >Details</button>
         </li>
     
         
@@ -1140,16 +1162,37 @@ data-event-label="Change to indicator.national_metadata tab"
                 type="button"
                 class="nav-link "
                 data-bs-toggle="tab"
-                id="tab-global"
-                data-bs-target="#global"
-                aria-controls="global"
+                id="tab-content"
+                data-bs-target="#content"
+                aria-controls="content"
                 role="tab"
                 data-on="click"
 data-event-category="Tab change"
 data-event-action="Change metadata view"
-data-event-label="Change to indicator.global_metadata tab"
+data-event-label="Change to indicator.contentAndProgress tab"
 
-            >Globale Metadaten</button>
+            >Inhalt und Entwicklung</button>
+        </li>
+    
+        
+        
+        
+        
+        <li role="presentation" class="nav-item">
+            <button
+                type="button"
+                class="nav-link "
+                data-bs-toggle="tab"
+                id="tab-history_1"
+                data-bs-target="#history_1"
+                aria-controls="history_1"
+                role="tab"
+                data-on="click"
+data-event-category="Tab change"
+data-event-action="Change metadata view"
+data-event-label="Change to indicator.history tab"
+
+            >Statusübersicht</button>
         </li>
     
         
@@ -1190,7 +1233,7 @@ data-event-label="Change to indicator.sources tab"
     
     <div role="tabpanel" class="tab-pane active" id="national">
       <article>
-        <p>Die für den jeweiligen SDG-Indikator zuständigen internationalen Organisationen (Custodian Agencies) veröffentlichen methodische Vorgaben zur Berechnung des Indikators - die sogenannten globalen Metadaten.<br /><br />Hier werden die am besten dazu geeigneten, national verfügbaren Zeitreihen bereitgestellt und ihre Vergleichbarkeit mit den globalen Metadaten ausgewiesen. Zugehörige methodische und länderspezifische Informationen dieser Zeitreihen finden Sie im nationalen Metadatenblatt.</p>
+        <p>Diese Übersicht beinhaltet zusätzliche Informationen zu den oben dargestellten Indikatoren, wie eine kurze Definition des Indikators und eine Beschreibung des politisch festgelegten Zielwertes sowie die politische Intention für die Auswahl des Indikators.</p>
 
         
 <table class="table" style="width:100%; table-layout: fixed;">
@@ -2130,10 +2173,9 @@ data-event-label="Change to indicator.sources tab"
     
     
     
-    <div role="tabpanel" class="tab-pane " id="global">
+    <div role="tabpanel" class="tab-pane " id="content">
       <article>
-        <p>Diese Übersicht stellt Informationen zu den globalen Metadaten des jeweiligen SDG-Indikators bereit. Die <a href="https://unstats.un.org/sdgs/metadata/">globalen Metadaten</a> werden durch die Statistische Division der Vereinten Nationen bereitgestellt.</p>
-
+        
         
 <table class="table" style="width:100%; table-layout: fixed;">
   
@@ -2141,11 +2183,18 @@ data-event-label="Change to indicator.sources tab"
   
   
   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
       
         
-          
-      
-        
       
 
       
@@ -2153,16 +2202,9 @@ data-event-label="Change to indicator.sources tab"
 
 
       
-        
-          <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Indikatorenbezeichnung </th>
-            <td>
-              
-                <p>Zahl der Objekte in der Deutschen Digitalen Bibliothek</p>
-
-              
-            </td>
-          </tr>
+         <!-- case: content -->
+          <p> <p><b>Text aus dem <a href="https://dns-indikatoren.de/assets/Publikationen/Indikatorenberichte/2022.pdf">Indikatorenbericht 2022 </a></b><br /><br />Die Deutsche Digitale Bibliothek (<abbr title="Deutsche Digitale Bibliothek" tabindex="0">DDB</abbr>) ist eine Plattform zur Vernetzung der digitalen Angebote von Institutionen wie Archiven, Bibliotheken und Museen. Sie wird von einem Netzwerk aus Kultur- und Wissenseinrichtungen des Bundes, der Länder und der Kommunen verwaltet.<br /><br />Finanziert wird sie gemeinsam vom Bund und von den Ländern. Die <abbr title="Deutsche Digitale Bibliothek" tabindex="0">DDB</abbr> hält die digitalen Bestände in der Regel nicht selbst vor, sondern stellt lediglich eine Verlinkung zu den Objekten bei den Partnereinrichtungen bereit. Für die Stabilität dieser Verlinkung sind die Partnereinrichtungen verantwortlich. Die Anzahl der Partnereinrichtungen, die Daten für die <abbr title="Deutsche Digitale Bibliothek" tabindex="0">DDB</abbr> bereitstellen, beläuft sich auf 448 (Stand: Mai 2020). Dabei machen Museen mit 183 und Archive mit 174 Einrichtungen den Großteil der Partnereinrichtungen aus.<br /><br />Die Online-Plattform der <abbr title="Deutsche Digitale Bibliothek" tabindex="0">DDB</abbr> ist seit dem Jahr 2012 zugänglich und beinhaltete in diesem Jahr Verlinkungen zu 5,6 Millionen Objekten. Bis zum Ende des ersten Halbjahres 2022 stieg diese Zahl auf 42,3 Millionen Objekte an. Bei Fortsetzung der bisherigen Entwicklung könnte das Ziel von 50 Millionen verlinkten Objekten für das Jahr 2030 erreicht werden. Bei Objekten, die durch Bibliotheken bereitgestellt werden, kann es sich in einigen Fällen um Objekte des gleichen Inhalts handeln, wenn beispielsweise die gleichen Ausgaben eines Buches mit der <abbr title="Deutsche Digitale Bibliothek" tabindex="0">DDB</abbr> verlinkt werden. In diesem Fall werden diese zwei Verlinkungen separat gezählt.<br /><br />Seit dem Jahr 2015 kann unterschieden werden, ob es sich bei einem verknüpften Objekt um ein Objekt mit oder ohne Digitalisat handelt. Bei Objekten mit Digitalisat kann über die Verlinkung auf dem Portal der <abbr title="Deutsche Digitale Bibliothek" tabindex="0">DDB</abbr> auf das digitalisierte Abbild eines Objektes, wie beispielsweise eines Buches, einer Urkunde oder eines Gemäldes zugegriffen werden. Bei Objekten ohne Digitalisat stehen dagegen lediglich Erschließungsinformationen zu einem Objekt zur Verfügung. Bei einem Gemälde umfassen diese beispielsweise Angaben zu der Künstlerin oder dem Künstler, dem Jahr der Entstehung und dem Ort der Verwahrung des Bildes. Somit ist der Informationsgehalt bei Objekten mit Digitalisat deutlich höher als bei Objekten, zu denen ausschließlich Erschließungsinformationen angeboten werden.<br /><br />Zum Ende des Jahres 2015 verfügten 6,3 Millionen Objekte über ein Digitalisat und diese Zahl stieg bis zum Ende des ersten Halbjahres 2022 auf 14,9 Millionen an. Auch der prozentuale Anteil der Objekte mit Digitalisat an der Gesamtzahl der verknüpften Objekte stieg in diesem Zeitraum von 34,5 % im Jahr 2015 auf 35,2 % zum Ende des ersten Halbjahres 2022. Den Großteil der verknüpften digitalisierten Objekte machten zum Ende des ersten Halbjahres 2022 Textobjekte aus (61,8 %), gefolgt von Bildobjekten (34,9 %) und sonstigen Medien (2,8 %). Audio- und Videodateien machten dagegen mit 0,3 <abbr title="beziehungsweise" tabindex="0">bzw.</abbr> 0,2 % nur einen sehr geringen Anteil der digitalisierten Objekte in der <abbr title="Deutsche Digitale Bibliothek" tabindex="0">DDB</abbr> aus.</p>
+ </p>
         
       
 
@@ -2171,56 +2213,6 @@ data-event-label="Change to indicator.sources tab"
 
       
     
-  
-      
-        
-          
-      
-        
-          
-      
-        
-      
-
-      
-      
-
-
-      
-        
-          <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Unterzielnummerierung </th>
-            <td>
-              
-                <p>11.4.1</p>
-
-              
-            </td>
-          </tr>
-        
-      
-
-      <!-- weather -->
-      
-
-      
-    
-  
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
-      
-        
-          
   
   
   
@@ -3015,6 +3007,1738 @@ data-event-label="Change to indicator.sources tab"
   
   
 </table>
+
+      </article>
+    </div>
+    
+    
+    
+    
+    
+    <div role="tabpanel" class="tab-pane " id="history_1">
+      <article>
+        <p>In dieser Übersichtstabelle sind die Bewertungen des Indikators nach Stand der vorhergehenden Jahre dargestellt. Daran lässt sich ablesen, ob das Wettersymbol für einen Indikator in den vergangenen Jahren stabil oder eher volatil war. <b>(Bewertungen aus dem <a href="https://dns-indikatoren.de/publications_reports/">Indikatorenbericht 2022 </a>)</b></p>
+
+        <!-- Count the non-empty histories (up to 2) -->
+
+
+
+
+  <div class="row">
+    
+    
+
+      
+
+      
+
+        
+        
+        <div class="col-md-6">
+          <!--  -->
+          
+<table class="table" style="width:100%; table-layout: fixed;">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+           <!-- leaves only weather_indicator_1_target-->
+            <tr id="indAndtarg">
+              <th scope="row" style="padding-right: 10px; text-align: left; width: 130px;">Indikator </th>
+              <td colspan="4">
+                <p>11.4 Zahl der Objekte in der Deutschen Digitalen Bibliothek</p>
+
+              </td>
+            </tr>
+          
+        
+      
+
+      
+    
+  
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+           <!-- leaves only weather_indicator_1_target-->
+            <tr id="indAndtarg">
+              <th scope="row" style="padding-right: 10px; text-align: left; width: 130px;">Ziel </th>
+              <td colspan="4">
+                <p>Steigerung der Zahl der in der Deutschen Digitalen Bibliothek vernetzten Objekte auf 50 Millionen bis 2030</p>
+
+              </td>
+            </tr>
+          
+        
+      
+
+      
+    
+  
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+      
+
+      
+        
+        
+        
+        
+        
+
+        
+        
+        
+        <tr id="years">
+          <th scope="row" style="padding-right: 10px; text-align: left; width: 130px;">Jahr </th>
+          
+            <td align="left" style="margin-bottom: 15px;">
+              <p><p>2018</p>
+</p>
+            </td>
+          
+          
+            <td align="left" style="margin-bottom: 15px;">
+              <p><p>2019</p>
+</p>
+            </td>
+          
+          
+            <td align="left" style="margin-bottom: 15px;">
+              <p><p>2020</p>
+</p>
+            </td>
+          
+          
+            <td align="left" style="margin-bottom: 15px;">
+              <p><p>2021</p>
+</p>
+            </td>
+          
+        </tr>
+      
+    
+  
+      
+        
+          
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+      
+
+      
+    
+  
+      
+        
+          
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+      
+
+      
+    
+  
+      
+        
+          
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+      
+
+      
+    
+  
+      
+        
+          
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+      
+
+      
+    
+  
+      
+        
+          
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+      
+
+      
+    
+  
+      
+        
+          
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+      
+
+      
+    
+  
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+          
+        
+      
+
+      
+    
+  
+      
+        
+          
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+          
+        
+      
+
+       <!--weather_indicator_1_target_1_item_a-->
+        
+          
+          
+          
+          
+
+          
+             <!--weather_indicator_(1...3)_target_(1...4)_category-->
+            
+            
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+            
+          
+             <!--weather_indicator_(1...3)_target_(1...4)_category-->
+            
+            
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+            
+          
+             <!--weather_indicator_(1...3)_target_(1...4)_category-->
+            
+            
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+            
+          
+             <!--weather_indicator_(1...3)_target_(1...4)_category-->
+            
+            
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+            
+          
+             <!--weather_indicator_(1...3)_target_(1...4)_category-->
+            
+            
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+            
+          
+             <!--weather_indicator_(1...3)_target_(1...4)_category-->
+            
+            
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+            
+          
+             <!--weather_indicator_(1...3)_target_(1...4)_category-->
+            
+            
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+            
+          
+             <!--weather_indicator_(1...3)_target_(1...4)_category-->
+            
+            
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+               <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              
+            
+          
+          
+
+
+
+          <tr id="items">
+            <th scope="row" style="padding-right: 10px; text-align: left; width: 130px;">Bewertung </th>
+            
+              <td align="left" style="padding-left: 0px;padding-right: 0px; width: auto">
+                <a href=" /dns-indicators_1/status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/Sonne.png" title="Bei Fortsetzung der Entwicklung aus 2018 wäre der Zielwert erreicht oder um weniger als 5&nbsp;% der Differenz zwischen Zielwert und dem Wert aus 2018 verfehlt worden." alt="<p>Sonne</p>
+" class="responsiveWeather" style="border: transparent"/></a>
+              </td>
+            
+
+            
+              <td align="left" style="padding-left: 0px;padding-right: 0px; width: auto">
+                <a href=" /dns-indicators_1/status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/Sonne.png" title="Bei Fortsetzung der Entwicklung aus 2019 wäre der Zielwert erreicht oder um weniger als 5&nbsp;% der Differenz zwischen Zielwert und dem Wert aus 2019 verfehlt worden." alt="<p>Sonne</p>
+" class="responsiveWeather" style="border: transparent"/></a>
+              </td>
+            
+
+            
+              <td align="left" style="padding-left: 0px;padding-right: 0px; width: auto">
+                <a href=" /dns-indicators_1/status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/Sonne.png" title="Bei Fortsetzung der Entwicklung aus 2020 wäre der Zielwert erreicht oder um weniger als 5&nbsp;% der Differenz zwischen Zielwert und dem Wert aus 2020 verfehlt worden." alt="<p>Sonne</p>
+" class="responsiveWeather" style="border: transparent"/></a>
+              </td>
+            
+
+            
+              <td align="left" style="padding-left: 0px;padding-right: 0px; width: auto">
+                <a href=" /dns-indicators_1/status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/Sonne.png" title="Bei Fortsetzung der Entwicklung aus 2021 wäre der Zielwert erreicht oder um weniger als 5&nbsp;% der Differenz zwischen Zielwert und dem Wert aus 2021 verfehlt worden." alt="<p>Sonne</p>
+" class="responsiveWeather" style="border: transparent"/></a>
+              </td>
+            
+          </tr>
+
+
+
+        
+      
+    
+  
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+          
+        
+      
+
+      
+    
+  
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+          
+        
+      
+
+      
+    
+  
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+          
+        
+      
+
+      
+    
+  
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+          
+        
+      
+
+      
+    
+  
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+          
+        
+      
+
+      
+    
+  
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+        
+          
+        
+      
+
+      
+    
+  
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</table>
+
+        </div>
+      
+    
+  </div>
+
 
       </article>
     </div>
@@ -4860,15 +6584,13 @@ data-event-label="Change to indicator.sources tab"
   
 
 
-  <a class="btn btn-primary" href="data">Daten bearbeiten</a>
+  <a class="btn btn-primary" href="http://prose.io/#DnsTestEnvironment/dns-data/edit/develop/data/indicator_11-4.csv">Daten bearbeiten</a>
   
 
   
-  <a class="btn btn-primary" href="metadata">Metadaten bearbeiten</a>
+  <a class="btn btn-primary" href="http://prose.io/#DnsTestEnvironment/dns-data/edit/develop/meta/11-4.md">Metadaten bearbeiten</a>
   
 
-  
-  <a class="btn btn-primary" href="config"></a>
   
 
 </div>
@@ -4899,33 +6621,18 @@ data-event-label="Change to indicator.sources tab"
                         </li>
                         
                         <li>
-                              <a href="/dns-indicators_1/contact-us ">Kontakt</a>
-                              
-                          </li>
-                        <li>
                               
                                 
-                                  <a href="https://twitter.com/MyTwitterAccount"><i class="fa fa-twitter" aria-hidden="true"></i>@destatis</a></a>
+                                  <a href="mailto:dns-indikatoren@destatis.de">Kontakt</a>
                                 
                               
                           </li>
                         <li>
-                              
-                                
-                                  <a href="https://facebook.com/MyFacebookAccount">general.facebook</a>
-                                
-                              
-                          </li>
-                        <li>
-                              <a href="/dns-indicators_1/about/cookies-and-privacy/ ">Cookies</a>
+                              <a href="/dns-indicators_1/imprint/ ">Im­pres­s­um</a>
                               
                           </li>
                         
                         
-                        
-                        <li>
-                            <a href="/dns-indicators_1/config">Configuration</a>
-                        </li>
                         </ul>
                 </div>
             </div>
@@ -4962,12 +6669,12 @@ data-event-label="Change to indicator.sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/dns-indicators_1/assets/js/sdg.js?v=20240819065211'></script>
+<script src='/dns-indicators_1/assets/js/sdg.js?v=20240819070405'></script>
 
 
     
     
-    <script src="/dns-indicators_1/assets/js/custom.js?v=20240819065211"></script><script>
+    <script src="/dns-indicators_1/assets/js/custom.js?v=20240819070405"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
